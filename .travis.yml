@@ -1,0 +1,16 @@
+language: go
+
+go:
+  - "1.10.x"
+  - "1.11.x"
+  - "1.12.x"
+
+install:
+  - go get golang.org/x/lint/golint
+  - go get -v -t ./here
+
+script:
+  - go test ./here -race -coverprofile=coverage.txt -covermode=atomic
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -X fix
