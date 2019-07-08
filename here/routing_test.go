@@ -52,5 +52,4 @@ func TestRoutingService_Route(t *testing.T) {
 	client := NewRoutingClient(httpClient)
 	routes, _, _ := client.Routing.Route([2]float32{52.5160, 13.3779}, [2]float32{52.5206, 13.3862}, "appId", "appCode", []RouteMode{Fastest, Car, TrafficDefault})
 	assert.NotNil(t, routes)
-	t.Log(routes)
 }

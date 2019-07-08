@@ -12,6 +12,7 @@ const (
 	PublicTransport RouteMode = 5
 	Truck           RouteMode = 6
 	TrafficDefault  RouteMode = 7
+	Bicycle         RouteMode = 8
 )
 
 func (routeMode RouteMode) String() string {
@@ -23,7 +24,8 @@ func (routeMode RouteMode) String() string {
 		"pedestrian",
 		"publicTransport",
 		"truck",
-		"traffic:default"}
+		"traffic:default",
+		"bicycle"}
 	if routeMode < Fastest || routeMode > TrafficDefault {
 		return "Unknown"
 	}
