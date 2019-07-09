@@ -160,7 +160,6 @@ func createRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, appID strin
 func (s *RoutingService) Route(waypoint0 [2]float32, waypoint1 [2]float32, appID string, appCode string, modes []RouteMode) (*RoutingResponse, *http.Response, error) {
 	routingParams := createRoutingParams(waypoint0, waypoint1, appID, appCode, modes)
 	routes := new(RoutingResponse)
-	apiError := new(APIError)
-	resp, err := s.sling.New().Get("verify_credentials.json").QueryStruct(routingParams).Receive(routes, apiError)
+	resp, err := s.sling.New().Get("verify_credentials.json").QueryStruct(routingParams).ReceiveSuccess(routes)
 	return routes, resp, err
 }
