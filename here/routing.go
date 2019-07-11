@@ -21,7 +21,7 @@ type RoutingParams struct {
 	AppID     string `url:"app_id"`
 	AppCode   string `url:"app_code"`
 	Modes     string `url:"mode"`
-	Departure string `url:departure`
+	Departure string `url:"departure"`
 }
 
 type RoutingResponse struct {
