@@ -14,6 +14,9 @@ type GeocodingService struct {
 // Parameters by search text for Geocoding Service.
 type SearchTextParameters struct {
 	SearchText string `url:"searchtext"`
+	AppID      string `url:"app_id"`
+	AppCode    string `url:"app_code"`
+	Gen        int    `url:"gen"`
 }
 
 type GeocodingResponse struct {
@@ -84,8 +87,8 @@ func newGeocodingService(sling *sling.Sling) *GeocodingService {
 }
 
 // Geocode by search text.
-func (s *GeocodingService) Search(text string) (*GeocodingResponse, *http.Response, error) {
-	searchTextParams := &SearchTextParameters{SearchText: text}
+func (s *GeocodingService) Search(text string, appID string, appCode string, gen int) (*GeocodingResponse, *http.Response, error) {
+	searchTextParams := &SearchTextParameters{SearchText: text, AppID: appID, AppCode: appCode, Gen: gen}
 	geocodingResponse := new(GeocodingResponse)
 	resp, err := s.sling.New().Get("geocode.json").QueryStruct(searchTextParams).ReceiveSuccess(geocodingResponse)
 	return geocodingResponse, resp, err
