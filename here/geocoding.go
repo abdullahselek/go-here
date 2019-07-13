@@ -8,7 +8,9 @@ import (
 
 // GeocodingService provides for HERE Geocoding api.
 type GeocodingService struct {
-	sling *sling.Sling
+	sling   *sling.Sling
+	AppID   string
+	AppCode string
 }
 
 // Parameters by search text for Geocoding Service.
@@ -80,15 +82,17 @@ type GeocodingResponse struct {
 }
 
 // newGeocodingService returns a new GeocodingService.
-func newGeocodingService(sling *sling.Sling) *GeocodingService {
+func newGeocodingService(sling *sling.Sling, appID string, appCode string) *GeocodingService {
 	return &GeocodingService{
-		sling: sling,
+		sling:   sling,
+		AppID:   appID,
+		AppCode: appCode,
 	}
 }
 
 // Geocode by search text.
-func (s *GeocodingService) Search(text string, appID string, appCode string, gen int) (*GeocodingResponse, *http.Response, error) {
-	searchTextParams := &SearchTextParameters{SearchText: text, AppID: appID, AppCode: appCode, Gen: gen}
+func (s *GeocodingService) Search(text string, gen int) (*GeocodingResponse, *http.Response, error) {
+	searchTextParams := &SearchTextParameters{SearchText: text, AppID: s.AppID, AppCode: s.AppCode, Gen: gen}
 	geocodingResponse := new(GeocodingResponse)
 	resp, err := s.sling.New().Get("geocode.json").QueryStruct(searchTextParams).ReceiveSuccess(geocodingResponse)
 	return geocodingResponse, resp, err

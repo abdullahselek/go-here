@@ -30,8 +30,8 @@ func TestGeocodingService_Route(t *testing.T) {
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
 
-	client := NewGeocodingClient(httpClient)
-	geocodingResponse, _, err := client.Geocoding.Search("200 S Mathilda Sunnyvale CA", "appId", "appCode", 9)
+	client := NewGeocodingClient(httpClient, "appID", "appCode")
+	geocodingResponse, _, err := client.Geocoding.Search("200 S Mathilda Sunnyvale CA", 9)
 	assert.NotNil(t, geocodingResponse)
 	assert.Nil(t, err)
 }
