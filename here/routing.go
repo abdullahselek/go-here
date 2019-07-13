@@ -11,7 +11,9 @@ import (
 
 // RoutingService provides for HERE routing api.
 type RoutingService struct {
-	sling *sling.Sling
+	sling   *sling.Sling
+	AppID   string
+	AppCode string
 }
 
 // Parameters for Routing Service.
@@ -124,9 +126,11 @@ type RoutingResponse struct {
 }
 
 // newRoutingService returns a new RoutingService.
-func newRoutingService(sling *sling.Sling) *RoutingService {
+func newRoutingService(sling *sling.Sling, appID string, appCode string) *RoutingService {
 	return &RoutingService{
-		sling: sling,
+		sling:   sling,
+		AppID:   appID,
+		AppCode: appCode,
 	}
 }
 
@@ -157,8 +161,8 @@ func createRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, appID strin
 }
 
 // Route with given parameters.
-func (s *RoutingService) Route(waypoint0 [2]float32, waypoint1 [2]float32, appID string, appCode string, modes []RouteMode) (*RoutingResponse, *http.Response, error) {
-	routingParams := createRoutingParams(waypoint0, waypoint1, appID, appCode, modes)
+func (s *RoutingService) Route(waypoint0 [2]float32, waypoint1 [2]float32, modes []RouteMode) (*RoutingResponse, *http.Response, error) {
+	routingParams := createRoutingParams(waypoint0, waypoint1, s.AppID, s.AppCode, modes)
 	routes := new(RoutingResponse)
 	resp, err := s.sling.New().Get("verify_credentials.json").QueryStruct(routingParams).ReceiveSuccess(routes)
 	return routes, resp, err

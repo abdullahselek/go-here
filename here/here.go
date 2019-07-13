@@ -15,11 +15,11 @@ type Client struct {
 }
 
 // NewRoutingClient returns a new RoutingClient.
-func NewRoutingClient(httpClient *http.Client) *Client {
+func NewRoutingClient(httpClient *http.Client, appID string, appCode string) *Client {
 	base := sling.New().Client(httpClient).Base("https://route.api.here.com/routing/7.2/")
 	return &Client{
 		sling:   base,
-		Routing: newRoutingService(base.New()),
+		Routing: newRoutingService(base.New(), appID, appCode),
 	}
 }
 
