@@ -29,7 +29,7 @@ func testingHTTPClient(handler http.Handler) (*http.Client, func()) {
 	return cli, s.Close
 }
 
-func createOkResponse() []byte {
+func createRouteOkResponse() []byte {
 	// Open our jsonFile
 	jsonFile, err := os.Open("resources/routing_response.json")
 	// if we os.Open returns an error then handle it
@@ -44,7 +44,7 @@ func createOkResponse() []byte {
 
 func TestRoutingService_Route(t *testing.T) {
 	h := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Write(createOkResponse())
+		w.Write(createRouteOkResponse())
 	})
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
