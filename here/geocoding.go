@@ -1,6 +1,7 @@
 package here
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/dghubble/sling"
@@ -19,6 +20,14 @@ type SearchTextParameters struct {
 	AppID      string `url:"app_id"`
 	AppCode    string `url:"app_code"`
 	Gen        int    `url:"gen"`
+}
+
+type AddressInBoundingBoxParameters struct {
+	SearchText string `url:"searchtext"`
+	MapView    string `url:"mapview"`
+	Gen        int    `url:"gen"`
+	AppID      string `url:"app_id"`
+	AppCode    string `url:"app_code"`
 }
 
 type GeocodingResponse struct {
@@ -93,6 +102,21 @@ func newGeocodingService(sling *sling.Sling, appID string, appCode string) *Geoc
 // Geocode by search text.
 func (s *GeocodingService) Search(text string, gen int) (*GeocodingResponse, *http.Response, error) {
 	searchTextParams := &SearchTextParameters{SearchText: text, AppID: s.AppID, AppCode: s.AppCode, Gen: gen}
+	geocodingResponse := new(GeocodingResponse)
+	resp, err := s.sling.New().Get("geocode.json").QueryStruct(searchTextParams).ReceiveSuccess(geocodingResponse)
+	return geocodingResponse, resp, err
+}
+
+func createMapView(latlong0 [2]float32, latlong1 [2]float32) string {
+	waypoint0 := createWaypoint(latlong0)
+	waypoint1 := createWaypoint(latlong1)
+	mapView := fmt.Sprintf("%s;%s", waypoint0, waypoint1)
+	return mapView
+}
+
+// Geocode by search text.
+func (s *GeocodingService) AddressInBoundingBox(searchText string, latlong0 [2]float32, latlong1 [2]float32, gen int) (*GeocodingResponse, *http.Response, error) {
+	searchTextParams := &AddressInBoundingBoxParameters{SearchText: searchText, MapView: createMapView(latlong0, latlong1), Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
 	geocodingResponse := new(GeocodingResponse)
 	resp, err := s.sling.New().Get("geocode.json").QueryStruct(searchTextParams).ReceiveSuccess(geocodingResponse)
 	return geocodingResponse, resp, err

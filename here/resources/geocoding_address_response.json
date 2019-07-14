@@ -1,0 +1,661 @@
+{
+    "Response": {
+      "MetaInfo": {
+        "Timestamp": "2019-07-14T07:26:23.879+0000",
+        "NextPageInformation": "2"
+      },
+      "View": [
+        {
+          "_type": "SearchResultsViewType",
+          "ViewId": 0,
+          "Result": [
+            {
+              "Relevance": 1,
+              "Distance": 389.4,
+              "MatchLevel": "houseNumber",
+              "MatchQuality": {
+                "Street": [
+                  0.85
+                ],
+                "HouseNumber": 1
+              },
+              "MatchType": "pointAddress",
+              "Location": {
+                "LocationId": "NT_lKArY3vPfQWu5MKjcqdIAC_xA",
+                "LocationType": "address",
+                "DisplayPosition": {
+                  "Latitude": 42.36225,
+                  "Longitude": -71.0803
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 42.36195,
+                    "Longitude": -71.08012
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 42.3633742,
+                    "Longitude": -71.0818214
+                  },
+                  "BottomRight": {
+                    "Latitude": 42.3611258,
+                    "Longitude": -71.0787786
+                  }
+                },
+                "Address": {
+                  "Label": "1 Main St, Cambridge, MA 02142, United States",
+                  "Country": "USA",
+                  "State": "MA",
+                  "County": "Middlesex",
+                  "City": "Cambridge",
+                  "District": "East Cambridge",
+                  "Street": "Main St",
+                  "HouseNumber": "1",
+                  "PostalCode": "02142",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "Massachusetts",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Middlesex",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Relevance": 1,
+              "Distance": 1675.1,
+              "MatchLevel": "houseNumber",
+              "MatchQuality": {
+                "Street": [
+                  0.85
+                ],
+                "HouseNumber": 1
+              },
+              "MatchType": "pointAddress",
+              "Location": {
+                "LocationId": "NT_Y05-doOpq-V3HrSSS.FZuC_xA",
+                "LocationType": "address",
+                "DisplayPosition": {
+                  "Latitude": 42.37197,
+                  "Longitude": -71.06252
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 42.37182,
+                    "Longitude": -71.06229
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 42.3730942,
+                    "Longitude": -71.0640416
+                  },
+                  "BottomRight": {
+                    "Latitude": 42.3708458,
+                    "Longitude": -71.0609984
+                  }
+                },
+                "Address": {
+                  "Label": "1 Main St, Charlestown, MA 02129, United States",
+                  "Country": "USA",
+                  "State": "MA",
+                  "County": "Suffolk",
+                  "City": "Charlestown",
+                  "Street": "Main St",
+                  "HouseNumber": "1",
+                  "PostalCode": "02129",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "Massachusetts",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Suffolk",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Relevance": 1,
+              "Distance": 4194.5,
+              "MatchLevel": "houseNumber",
+              "MatchQuality": {
+                "Street": [
+                  0.85
+                ],
+                "HouseNumber": 1
+              },
+              "MatchType": "interpolated",
+              "Location": {
+                "LocationId": "NT_oqP5UTUkdCpD6BRBcB-1FA_xA",
+                "LocationType": "address",
+                "DisplayPosition": {
+                  "Latitude": 42.39486,
+                  "Longitude": -71.09771
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 42.3949,
+                    "Longitude": -71.09757
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 42.3959842,
+                    "Longitude": -71.0992322
+                  },
+                  "BottomRight": {
+                    "Latitude": 42.3937358,
+                    "Longitude": -71.0961878
+                  }
+                },
+                "Address": {
+                  "Label": "1 Main St, Somerville, MA 02145, United States",
+                  "Country": "USA",
+                  "State": "MA",
+                  "County": "Middlesex",
+                  "City": "Somerville",
+                  "District": "Ten Hills",
+                  "Street": "Main St",
+                  "HouseNumber": "1",
+                  "PostalCode": "02145",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "Massachusetts",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Middlesex",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Relevance": 1,
+              "Distance": 4895.6,
+              "MatchLevel": "houseNumber",
+              "MatchQuality": {
+                "Street": [
+                  0.85
+                ],
+                "HouseNumber": 1
+              },
+              "MatchType": "interpolated",
+              "Location": {
+                "LocationId": "NT_y2gtJqRwaFo4Nm.mdoeCaB_xA",
+                "LocationType": "address",
+                "DisplayPosition": {
+                  "Latitude": 42.403196,
+                  "Longitude": -71.0604689
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 42.4031203,
+                    "Longitude": -71.0606202
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 42.4043201,
+                    "Longitude": -71.0619913
+                  },
+                  "BottomRight": {
+                    "Latitude": 42.4020718,
+                    "Longitude": -71.0589465
+                  }
+                },
+                "Address": {
+                  "Label": "1 Main St, Everett, MA 02149, United States",
+                  "Country": "USA",
+                  "State": "MA",
+                  "County": "Middlesex",
+                  "City": "Everett",
+                  "Street": "Main St",
+                  "HouseNumber": "1",
+                  "PostalCode": "02149",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "Massachusetts",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Middlesex",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Relevance": 1,
+              "Distance": 5226.9,
+              "MatchLevel": "houseNumber",
+              "MatchQuality": {
+                "Street": [
+                  0.85
+                ],
+                "HouseNumber": 1
+              },
+              "MatchType": "interpolated",
+              "Location": {
+                "LocationId": "NT_lsbYAKMO3Piio-798LqzBA_xA",
+                "LocationType": "address",
+                "DisplayPosition": {
+                  "Latitude": 42.4020112,
+                  "Longitude": -71.1064113
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 42.4021268,
+                    "Longitude": -71.1063172
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 42.4031354,
+                    "Longitude": -71.1079337
+                  },
+                  "BottomRight": {
+                    "Latitude": 42.4008871,
+                    "Longitude": -71.104889
+                  }
+                },
+                "Address": {
+                  "Label": "1 Main St, Medford, MA 02155, United States",
+                  "Country": "USA",
+                  "State": "MA",
+                  "County": "Middlesex",
+                  "City": "Medford",
+                  "Street": "Main St",
+                  "HouseNumber": "1",
+                  "PostalCode": "02155",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "Massachusetts",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Middlesex",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Relevance": 1,
+              "Distance": 6170.6,
+              "MatchLevel": "houseNumber",
+              "MatchQuality": {
+                "Street": [
+                  0.85
+                ],
+                "HouseNumber": 1
+              },
+              "MatchType": "pointAddress",
+              "Location": {
+                "LocationId": "NT_MGsfLKhDVf.qJdmjZUeANB_xA",
+                "LocationType": "address",
+                "DisplayPosition": {
+                  "Latitude": 42.41552,
+                  "Longitude": -71.06438
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 42.41544,
+                    "Longitude": -71.06462
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 42.4166442,
+                    "Longitude": -71.0659027
+                  },
+                  "BottomRight": {
+                    "Latitude": 42.4143958,
+                    "Longitude": -71.0628573
+                  }
+                },
+                "Address": {
+                  "Label": "1 Main St, Malden, MA 02148, United States",
+                  "Country": "USA",
+                  "State": "MA",
+                  "County": "Middlesex",
+                  "City": "Malden",
+                  "Street": "Main St",
+                  "HouseNumber": "1",
+                  "PostalCode": "02148",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "Massachusetts",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Middlesex",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Relevance": 1,
+              "Distance": 7170.7,
+              "MatchLevel": "houseNumber",
+              "MatchQuality": {
+                "Street": [
+                  0.85
+                ],
+                "HouseNumber": 1
+              },
+              "MatchType": "interpolated",
+              "Location": {
+                "LocationId": "NT_77T2y7NlD1Q.hXrtSg7yzB_xA",
+                "LocationType": "address",
+                "DisplayPosition": {
+                  "Latitude": 42.3825126,
+                  "Longitude": -70.9939073
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 42.3826473,
+                    "Longitude": -70.9938964
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 42.3836368,
+                    "Longitude": -70.9954292
+                  },
+                  "BottomRight": {
+                    "Latitude": 42.3813885,
+                    "Longitude": -70.9923854
+                  }
+                },
+                "Address": {
+                  "Label": "1 Main St, Winthrop, MA 02152, United States",
+                  "Country": "USA",
+                  "State": "MA",
+                  "County": "Suffolk",
+                  "City": "Winthrop",
+                  "Street": "Main St",
+                  "HouseNumber": "1",
+                  "PostalCode": "02152",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "Massachusetts",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Suffolk",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Relevance": 1,
+              "Distance": 7773.8,
+              "MatchLevel": "houseNumber",
+              "MatchQuality": {
+                "Street": [
+                  0.85
+                ],
+                "HouseNumber": 1
+              },
+              "MatchType": "interpolated",
+              "Location": {
+                "LocationId": "NT_qak2laGQ1BL7oM6iBB2FCA_xA",
+                "LocationType": "address",
+                "DisplayPosition": {
+                  "Latitude": 42.2921167,
+                  "Longitude": -71.094393
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 42.2922204,
+                    "Longitude": -71.0945097
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 42.2932408,
+                    "Longitude": -71.0959127
+                  },
+                  "BottomRight": {
+                    "Latitude": 42.2909925,
+                    "Longitude": -71.0928733
+                  }
+                },
+                "Address": {
+                  "Label": "1 E Main St, Dorchester Center, MA 02124, United States",
+                  "Country": "USA",
+                  "State": "MA",
+                  "County": "Suffolk",
+                  "City": "Dorchester Center",
+                  "District": "Franklin Field South",
+                  "Street": "E Main St",
+                  "HouseNumber": "1",
+                  "PostalCode": "02124",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "Massachusetts",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Suffolk",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Relevance": 1,
+              "Distance": 8128.8,
+              "MatchLevel": "houseNumber",
+              "MatchQuality": {
+                "Street": [
+                  0.85
+                ],
+                "HouseNumber": 1
+              },
+              "MatchType": "interpolated",
+              "Location": {
+                "LocationId": "NT_AUEFZFwWJS8SeDEp0LqYkD_xA",
+                "LocationType": "address",
+                "DisplayPosition": {
+                  "Latitude": 42.3803186,
+                  "Longitude": -70.9807301
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 42.38029,
+                    "Longitude": -70.9805516
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 42.3814427,
+                    "Longitude": -70.9822519
+                  },
+                  "BottomRight": {
+                    "Latitude": 42.3791944,
+                    "Longitude": -70.9792082
+                  }
+                },
+                "Address": {
+                  "Label": "1 S Main St, Winthrop, MA 02152, United States",
+                  "Country": "USA",
+                  "State": "MA",
+                  "County": "Suffolk",
+                  "City": "Winthrop",
+                  "Street": "S Main St",
+                  "HouseNumber": "1",
+                  "PostalCode": "02152",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "Massachusetts",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Suffolk",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "Relevance": 1,
+              "Distance": 8307.4,
+              "MatchLevel": "houseNumber",
+              "MatchQuality": {
+                "Street": [
+                  0.85
+                ],
+                "HouseNumber": 1
+              },
+              "MatchType": "interpolated",
+              "Location": {
+                "LocationId": "NT_9FFlPHGOhkN9s.RmxeHclC_xA",
+                "LocationType": "address",
+                "DisplayPosition": {
+                  "Latitude": 42.28729,
+                  "Longitude": -71.09482
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 42.28722,
+                    "Longitude": -71.09489
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 42.2884142,
+                    "Longitude": -71.0963396
+                  },
+                  "BottomRight": {
+                    "Latitude": 42.2861658,
+                    "Longitude": -71.0933004
+                  }
+                },
+                "Address": {
+                  "Label": "1 W Main St, Mattapan, MA 02126, United States",
+                  "Country": "USA",
+                  "State": "MA",
+                  "County": "Suffolk",
+                  "City": "Mattapan",
+                  "District": "Wellington Hill",
+                  "Street": "W Main St",
+                  "HouseNumber": "1",
+                  "PostalCode": "02126",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "Massachusetts",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Suffolk",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
