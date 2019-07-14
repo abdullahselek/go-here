@@ -22,6 +22,7 @@ type SearchTextParameters struct {
 	Gen        int    `url:"gen"`
 }
 
+// Parameters by address text within given boundingbox.
 type AddressInBoundingBoxParameters struct {
 	SearchText string `url:"searchtext"`
 	MapView    string `url:"mapview"`
@@ -30,6 +31,7 @@ type AddressInBoundingBoxParameters struct {
 	AppCode    string `url:"app_code"`
 }
 
+// Response model for geocoding service.
 type GeocodingResponse struct {
 	Response struct {
 		MetaInfo struct {
@@ -107,6 +109,7 @@ func (s *GeocodingService) Search(text string, gen int) (*GeocodingResponse, *ht
 	return geocodingResponse, resp, err
 }
 
+// Creates mapview parameter with given latitudes and longitudes.
 func createMapView(latlong0 [2]float32, latlong1 [2]float32) string {
 	waypoint0 := createWaypoint(latlong0)
 	waypoint1 := createWaypoint(latlong1)
@@ -114,7 +117,7 @@ func createMapView(latlong0 [2]float32, latlong1 [2]float32) string {
 	return mapView
 }
 
-// Geocode by search text.
+// Geocode by search text within given bounding box.
 func (s *GeocodingService) AddressInBoundingBox(searchText string, latlong0 [2]float32, latlong1 [2]float32, gen int) (*GeocodingResponse, *http.Response, error) {
 	searchTextParams := &AddressInBoundingBoxParameters{SearchText: searchText, MapView: createMapView(latlong0, latlong1), Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
 	geocodingResponse := new(GeocodingResponse)

@@ -26,6 +26,7 @@ type RoutingParams struct {
 	Departure string `url:"departure"`
 }
 
+// Response model for routing service.
 type RoutingResponse struct {
 	Response struct {
 		MetaInfo struct {
@@ -134,11 +135,13 @@ func newRoutingService(sling *sling.Sling, appID string, appCode string) *Routin
 	}
 }
 
+// Returns waypoints as a formatted string.
 func createWaypoint(waypoint [2]float32) string {
 	waypoints := fmt.Sprintf("%f,%f", waypoint[0], waypoint[1])
 	return waypoints
 }
 
+// Creates routing parameters struct.
 func createRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, appID string, appCode string, modes []RouteMode) RoutingParams {
 	stringWaypoint0 := createWaypoint(waypoint0)
 	stringWaypoint1 := createWaypoint(waypoint1)
