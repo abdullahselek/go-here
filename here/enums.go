@@ -1,6 +1,6 @@
 package here
 
-// Modes for Routing API.
+// RouteMode modes for Routing API.
 type RouteMode int
 
 const (
@@ -32,7 +32,7 @@ func (routeMode RouteMode) String() string {
 	return modes[routeMode]
 }
 
-// Modes for ReverseGeocoding API.
+// ReverseGeocodingMode modes for ReverseGeocoding API.
 type ReverseGeocodingMode int
 
 const (

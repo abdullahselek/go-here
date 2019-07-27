@@ -14,7 +14,7 @@ type GeocodingService struct {
 	AppCode string
 }
 
-// Parameters by search text for Geocoding Service.
+// SearchTextParameters parameters by search text for Geocoding Service.
 type SearchTextParameters struct {
 	SearchText string `url:"searchtext"`
 	AppID      string `url:"app_id"`
@@ -22,7 +22,7 @@ type SearchTextParameters struct {
 	Gen        int    `url:"gen"`
 }
 
-// Parameters by address text within given boundingbox.
+// AddressInBoundingBoxParameters parameters by address text within given boundingbox.
 type AddressInBoundingBoxParameters struct {
 	SearchText string `url:"searchtext"`
 	MapView    string `url:"mapview"`
@@ -31,7 +31,7 @@ type AddressInBoundingBoxParameters struct {
 	AppCode    string `url:"app_code"`
 }
 
-// Parameters by partial address information.
+// PartialAddressInformationParameters parameters by partial address information.
 type PartialAddressInformationParameters struct {
 	HouseNumber int    `url:"housenumber"`
 	Street      string `url:"street"`
@@ -42,7 +42,7 @@ type PartialAddressInformationParameters struct {
 	AppCode     string `url:"app_code"`
 }
 
-// Response model for geocoding service.
+// GeocodingResponse response model for geocoding service.
 type GeocodingResponse struct {
 	Response struct {
 		MetaInfo struct {
@@ -112,7 +112,7 @@ func newGeocodingService(sling *sling.Sling, appID string, appCode string) *Geoc
 	}
 }
 
-// Geocode by search text.
+// Search for geocode by text.
 func (s *GeocodingService) Search(text string, gen int) (*GeocodingResponse, *http.Response, error) {
 	searchTextParams := &SearchTextParameters{SearchText: text, AppID: s.AppID, AppCode: s.AppCode, Gen: gen}
 	geocodingResponse := new(GeocodingResponse)
@@ -128,7 +128,7 @@ func createMapView(latlong0 [2]float32, latlong1 [2]float32) string {
 	return mapView
 }
 
-// Geocode by search text within given bounding box.
+// AddressInBoundingBox by search text within given bounding box.
 func (s *GeocodingService) AddressInBoundingBox(searchText string, latlong0 [2]float32, latlong1 [2]float32, gen int) (*GeocodingResponse, *http.Response, error) {
 	searchTextParams := &AddressInBoundingBoxParameters{SearchText: searchText, MapView: createMapView(latlong0, latlong1), Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
 	geocodingResponse := new(GeocodingResponse)
@@ -136,7 +136,7 @@ func (s *GeocodingService) AddressInBoundingBox(searchText string, latlong0 [2]f
 	return geocodingResponse, resp, err
 }
 
-// Request the latitude, longitude and details of an address based on partial address information.
+// PartialAddressInformation requests the latitude, longitude and details of an address based on partial address information.
 func (s *GeocodingService) PartialAddressInformation(houseNumber int, street string, city string, country string, gen int) (*GeocodingResponse, *http.Response, error) {
 	partialAddressInformationParameters := &PartialAddressInformationParameters{HouseNumber: houseNumber, Street: street, City: city, Country: country, Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
 	geocodingResponse := new(GeocodingResponse)

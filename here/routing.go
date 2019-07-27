@@ -16,7 +16,7 @@ type RoutingService struct {
 	AppCode string
 }
 
-// Parameters for Routing Service.
+// RoutingParams parameters for Routing Service.
 type RoutingParams struct {
 	Waypoint0 string `url:"waypoint0"`
 	Waypoint1 string `url:"waypoint1"`
@@ -26,7 +26,7 @@ type RoutingParams struct {
 	Departure string `url:"departure"`
 }
 
-// Response model for routing service.
+// RoutingResponse model for routing service.
 type RoutingResponse struct {
 	Response struct {
 		MetaInfo struct {
