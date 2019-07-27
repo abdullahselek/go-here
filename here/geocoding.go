@@ -31,6 +31,17 @@ type AddressInBoundingBoxParameters struct {
 	AppCode    string `url:"app_code"`
 }
 
+// Parameters by partial address information.
+type PartialAddressInformationParameters struct {
+	HouseNumber int    `url:"housenumber"`
+	Street      string `url:"street"`
+	City        string `url:"city"`
+	Country     string `url:"country"`
+	Gen         int    `url:"gen"`
+	AppID       string `url:"app_id"`
+	AppCode     string `url:"app_code"`
+}
+
 // Response model for geocoding service.
 type GeocodingResponse struct {
 	Response struct {
@@ -122,5 +133,13 @@ func (s *GeocodingService) AddressInBoundingBox(searchText string, latlong0 [2]f
 	searchTextParams := &AddressInBoundingBoxParameters{SearchText: searchText, MapView: createMapView(latlong0, latlong1), Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
 	geocodingResponse := new(GeocodingResponse)
 	resp, err := s.sling.New().Get("geocode.json").QueryStruct(searchTextParams).ReceiveSuccess(geocodingResponse)
+	return geocodingResponse, resp, err
+}
+
+// Request the latitude, longitude and details of an address based on partial address information.
+func (s *GeocodingService) PartialAddressInformation(houseNumber int, street string, city string, country string, gen int) (*GeocodingResponse, *http.Response, error) {
+	partialAddressInformationParameters := &PartialAddressInformationParameters{HouseNumber: houseNumber, Street: street, City: city, Country: country, Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
+	geocodingResponse := new(GeocodingResponse)
+	resp, err := s.sling.New().Get("geocode.json").QueryStruct(partialAddressInformationParameters).ReceiveSuccess(geocodingResponse)
 	return geocodingResponse, resp, err
 }
