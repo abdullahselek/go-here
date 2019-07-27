@@ -31,3 +31,27 @@ func (routeMode RouteMode) String() string {
 	}
 	return modes[routeMode]
 }
+
+// Modes for ReverseGeocoding API.
+type ReverseGeocodingMode int
+
+const (
+	RetrieveAddresses ReverseGeocodingMode = 0
+	RetrieveAreas     ReverseGeocodingMode = 1
+	RetrieveLandmarks ReverseGeocodingMode = 2
+	RetrieveAll       ReverseGeocodingMode = 3
+	TrackPosition     ReverseGeocodingMode = 4
+)
+
+func (reverseGeocodingMode ReverseGeocodingMode) String() string {
+	modes := [...]string{
+		"retrieveAddresses",
+		"retrieveAreas",
+		"retrieveLandmarks",
+		"retrieveAll",
+		"trackPosition"}
+	if reverseGeocodingMode < RetrieveAddresses || reverseGeocodingMode > TrackPosition {
+		return "Unknown"
+	}
+	return modes[reverseGeocodingMode]
+}
