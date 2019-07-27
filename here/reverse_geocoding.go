@@ -1,6 +1,11 @@
 package here
 
-import "github.com/dghubble/sling"
+import (
+	"fmt"
+	"net/http"
+
+	"github.com/dghubble/sling"
+)
 
 // ReverseGeocodingService provides for HERE ReverseGeocoding api.
 type ReverseGeocodingService struct {
@@ -9,11 +14,35 @@ type ReverseGeocodingService struct {
 	AppCode string
 }
 
-// newGeocodingService returns a new GeocodingService.
+// AddressFromLocationParameters used for fetching address from location.
+type AddressFromLocationParameters struct {
+	Prox       string `url:"prox"`
+	Mode       string `url:"mode"`
+	MaxResults int    `url:"maxresults"`
+	Gen        int    `url:"gen"`
+	AppID      string `url:"app_id"`
+	AppCode    string `url:"app_code"`
+}
+
+// newReverseGeocodingService returns a new GeocodingService.
 func newReverseGeocodingService(sling *sling.Sling, appID string, appCode string) *ReverseGeocodingService {
 	return &ReverseGeocodingService{
 		sling:   sling,
 		AppID:   appID,
 		AppCode: appCode,
 	}
+}
+
+// Returns prox as a formatted string.
+func createProx(latlong [2]float32, diameter int) string {
+	prox := fmt.Sprintf("%f,%f,%d", latlong[0], latlong[1], diameter)
+	return prox
+}
+
+// AddressFromLocation returns address or addresses from given location.
+func (s *ReverseGeocodingService) AddressFromLocation(latlong [2]float32, diameter int, mode ReverseGeocodingMode, maxResults int, gen int) (*GeocodingResponse, *http.Response, error) {
+	addressFromLocationParameters := &AddressFromLocationParameters{Prox: createProx(latlong, diameter), Mode: ReverseGeocodingMode.String(mode), MaxResults: maxResults, Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
+	geocodingResponse := new(GeocodingResponse)
+	resp, err := s.sling.New().Get("reversegeocode.json").QueryStruct(addressFromLocationParameters).ReceiveSuccess(geocodingResponse)
+	return geocodingResponse, resp, err
 }
