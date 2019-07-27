@@ -26,7 +26,7 @@ func NewRoutingClient(httpClient *http.Client, appID string, appCode string) *Cl
 
 // NewGeocodingClient returns a new GeocodingClient.
 func NewGeocodingClient(httpClient *http.Client, appID string, appCode string) *Client {
-	base := sling.New().Client(httpClient).Base("https://geocoder.api.here.com/6.2/geocode.json")
+	base := sling.New().Client(httpClient).Base("https://geocoder.api.here.com/6.2/")
 	return &Client{
 		sling:     base,
 		Geocoding: newGeocodingService(base.New(), appID, appCode),
