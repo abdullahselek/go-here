@@ -1,57 +1,15 @@
 package here
 
 import (
-	"fmt"
-	"io/ioutil"
 	"net/http"
-	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
 
-func createSearchTextOkResponse() []byte {
-	// Open our jsonFile
-	jsonFile, err := os.Open("resources/geocoding_response.json")
-	// if we os.Open returns an error then handle it
-	if err != nil {
-		fmt.Println(err)
-	}
-	// defer the closing of our jsonFile so that we can parse it later on
-	defer jsonFile.Close()
-	byteValue, _ := ioutil.ReadAll(jsonFile)
-	return byteValue
-}
-
-func createAddressInBoundingBoxOkResponse() []byte {
-	// Open our jsonFile
-	jsonFile, err := os.Open("resources/geocoding_address_response.json")
-	// if we os.Open returns an error then handle it
-	if err != nil {
-		fmt.Println(err)
-	}
-	// defer the closing of our jsonFile so that we can parse it later on
-	defer jsonFile.Close()
-	byteValue, _ := ioutil.ReadAll(jsonFile)
-	return byteValue
-}
-
-func createPartialAddressInformationOkResponse() []byte {
-	// Open our jsonFile
-	jsonFile, err := os.Open("resources/geocoding_partial_address.json")
-	// if we os.Open returns an error then handle it
-	if err != nil {
-		fmt.Println(err)
-	}
-	// defer the closing of our jsonFile so that we can parse it later on
-	defer jsonFile.Close()
-	byteValue, _ := ioutil.ReadAll(jsonFile)
-	return byteValue
-}
-
 func TestGeocodingService_Route(t *testing.T) {
 	h := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Write(createSearchTextOkResponse())
+		w.Write(readJSONFile("resources/geocoding_response.json"))
 	})
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
@@ -64,7 +22,7 @@ func TestGeocodingService_Route(t *testing.T) {
 
 func TestGeocodingService_AddressInBoundingBox(t *testing.T) {
 	h := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Write(createAddressInBoundingBoxOkResponse())
+		w.Write(readJSONFile("resources/geocoding_address_response.json"))
 	})
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
@@ -77,7 +35,7 @@ func TestGeocodingService_AddressInBoundingBox(t *testing.T) {
 
 func TestGeocodingService_PartialAddressInformation(t *testing.T) {
 	h := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Write(createPartialAddressInformationOkResponse())
+		w.Write(readJSONFile("resources/geocoding_partial_address.json"))
 	})
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
