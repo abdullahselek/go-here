@@ -7,9 +7,9 @@ import (
 )
 
 func TestRouteMode(t *testing.T) {
-	mode := RouteMode.String(Fastest)
+	mode := Route.String(Mode.Fastest)
 	assert.Equal(t, mode, "fastest")
-	mode = RouteMode.String(TrafficDefault)
+	mode = Route.String(Mode.TrafficDefault)
 	assert.Equal(t, mode, "traffic:default")
 }
 

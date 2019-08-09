@@ -15,7 +15,7 @@ func TestRoutingService_Route(t *testing.T) {
 	defer teardown()
 
 	client := NewRoutingClient(httpClient, "appId", "appCode")
-	routes, _, err := client.Routing.Route([2]float32{52.5160, 13.3779}, [2]float32{52.5206, 13.3862}, []RouteMode{Fastest, Car, TrafficDefault})
+	routes, _, err := client.Routing.Route([2]float32{52.5160, 13.3779}, [2]float32{52.5206, 13.3862}, []Route{Mode.Fastest, Mode.Car, Mode.TrafficDefault})
 	assert.NotNil(t, routes)
 	assert.Nil(t, err)
 }

@@ -1,21 +1,34 @@
 package here
 
-// RouteMode modes for Routing API.
-type RouteMode int
+// Route modes for Routing API.
+type Route int
 
-const (
-	Fastest         RouteMode = 0
-	Car             RouteMode = 1
-	TrafficDisabled RouteMode = 2
-	Enabled         RouteMode = 3
-	Pedestrian      RouteMode = 4
-	PublicTransport RouteMode = 5
-	Truck           RouteMode = 6
-	TrafficDefault  RouteMode = 7
-	Bicycle         RouteMode = 8
-)
+type list struct {
+	Fastest         Route
+	Car             Route
+	TrafficDisabled Route
+	Enabled         Route
+	Pedestrian      Route
+	PublicTransport Route
+	Truck           Route
+	TrafficDefault  Route
+	Bicycle         Route
+}
 
-func (routeMode RouteMode) String() string {
+// Mode for public use
+var Mode = &list{
+	Fastest:         0,
+	Car:             1,
+	TrafficDisabled: 2,
+	Enabled:         3,
+	Pedestrian:      4,
+	PublicTransport: 5,
+	Truck:           6,
+	TrafficDefault:  7,
+	Bicycle:         8,
+}
+
+func (routeMode Route) String() string {
 	modes := [...]string{
 		"fastest",
 		"car",
@@ -26,7 +39,7 @@ func (routeMode RouteMode) String() string {
 		"truck",
 		"traffic:default",
 		"bicycle"}
-	if routeMode < Fastest || routeMode > TrafficDefault {
+	if routeMode < Mode.Fastest || routeMode > Mode.TrafficDefault {
 		return "Unknown"
 	}
 	return modes[routeMode]
