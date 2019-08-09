@@ -45,7 +45,7 @@ func NewReverseGeocodingClient(httpClient *http.Client, appID string, appCode st
 
 // NewAutocompleteGeocodingClient returns a new AutocompleteGeocodingService.
 func NewAutocompleteGeocodingClient(httpClient *http.Client, appID string, appCode string) *Client {
-	base := sling.New().Client(httpClient).Base("http://autocomplete.geocoder.api.here.com/6.2/")
+	base := sling.New().Client(httpClient).Base("https://autocomplete.geocoder.api.here.com/6.2/")
 	return &Client{
 		sling:                 base,
 		AutocompleteGeocoding: newAutocompleteGeocodingService(base.New(), appID, appCode),

@@ -1,0 +1,88 @@
+{
+    "suggestions": [
+     {
+      "label": "Deutschland, Berlin, Berlin, 10117, Berlin, Pariser Platz 1",
+      "language": "de",
+      "countryCode": "DEU",
+      "locationId": "NT_5mGkj3z90Fbj4abzMbUE4C_xA",
+      "address": {
+       "country": "Deutschland",
+       "state": "Berlin",
+       "county": "Berlin",
+       "city": "Berlin",
+       "district": "Mitte",
+       "street": "Pariser Platz",
+       "houseNumber": "1",
+       "postalCode": "10117"
+      },
+      "matchLevel": "houseNumber"
+     },
+     {
+      "label": "Deutschland, Berlin, Berlin, 12623, Berlin, Pariser Straße 1",
+      "language": "de",
+      "countryCode": "DEU",
+      "locationId": "NT_DhgBysiqGeVoRcX.IgLWJC_xA",
+      "address": {
+       "country": "Deutschland",
+       "state": "Berlin",
+       "county": "Berlin",
+       "city": "Berlin",
+       "district": "Mahlsdorf",
+       "street": "Pariser Straße",
+       "houseNumber": "1",
+       "postalCode": "12623"
+      },
+      "matchLevel": "houseNumber"
+     },
+     {
+      "label": "Deutschland, Berlin, Berlin, 10719, Berlin, Pariser Straße 1",
+      "language": "de",
+      "countryCode": "DEU",
+      "locationId": "NT_O4NUM-pb1nBQVGPJmz6ynA_xA",
+      "address": {
+       "country": "Deutschland",
+       "state": "Berlin",
+       "county": "Berlin",
+       "city": "Berlin",
+       "district": "Wilmersdorf",
+       "street": "Pariser Straße",
+       "houseNumber": "1",
+       "postalCode": "10719"
+      },
+      "matchLevel": "houseNumber"
+     },
+     {
+      "label": "Deutschland, Berlin, Berlin, 10243, Berlin, Straße der Pariser Kommune 1",
+      "language": "de",
+      "countryCode": "DEU",
+      "locationId": "NT_bD2VXvX6WIWNBOM8VFvXbA_xA",
+      "address": {
+       "country": "Deutschland",
+       "state": "Berlin",
+       "county": "Berlin",
+       "city": "Berlin",
+       "district": "Friedrichshain",
+       "street": "Straße der Pariser Kommune",
+       "houseNumber": "1",
+       "postalCode": "10243"
+      },
+      "matchLevel": "houseNumber"
+     },
+     {
+      "label": "Deutschland, Berlin, Berlin, 10707, Berlin, Pariser Straße",
+      "language": "de",
+      "countryCode": "DEU",
+      "locationId": "NT_X3ow-eEKtkJ7Ns-KzwwRnB",
+      "address": {
+       "country": "Deutschland",
+       "state": "Berlin",
+       "county": "Berlin",
+       "city": "Berlin",
+       "district": "Wilmersdorf",
+       "street": "Pariser Straße",
+       "postalCode": "10707"
+      },
+      "matchLevel": "street"
+     }
+    ]
+   }
