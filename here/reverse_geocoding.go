@@ -49,8 +49,8 @@ func createProx(latlong [2]float32, diameter int) string {
 }
 
 // AddressFromLocation returns address or addresses from given location.
-func (s *ReverseGeocodingService) AddressFromLocation(latlong [2]float32, diameter int, mode ReverseGeocodingMode, maxResults int, gen int) (*GeocodingResponse, *http.Response, error) {
-	addressFromLocationParameters := &AddressFromLocationParameters{Prox: createProx(latlong, diameter), Mode: ReverseGeocodingMode.String(mode), MaxResults: maxResults, Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
+func (s *ReverseGeocodingService) AddressFromLocation(latlong [2]float32, diameter int, mode Enum, maxResults int, gen int) (*GeocodingResponse, *http.Response, error) {
+	addressFromLocationParameters := &AddressFromLocationParameters{Prox: createProx(latlong, diameter), Mode: Enum.ValueOfReverseGeocodingMode(mode), MaxResults: maxResults, Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
 	geocodingResponse := new(GeocodingResponse)
 	resp, err := s.sling.New().Get("reversegeocode.json").QueryStruct(addressFromLocationParameters).ReceiveSuccess(geocodingResponse)
 	return geocodingResponse, resp, err
@@ -58,7 +58,7 @@ func (s *ReverseGeocodingService) AddressFromLocation(latlong [2]float32, diamet
 
 // Landmarks returns details of landmarks near to a given latitude and longitude.
 func (s *ReverseGeocodingService) Landmarks(latlong [2]float32, diameter int, gen int) (*GeocodingResponse, *http.Response, error) {
-	landmarksParameters := &LandmarksParameters{Prox: createProx(latlong, diameter), Mode: ReverseGeocodingMode.String(RetrieveLandmarks), Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
+	landmarksParameters := &LandmarksParameters{Prox: createProx(latlong, diameter), Mode: Enum.ValueOfReverseGeocodingMode(ReverseGeocodingMode.RetrieveLandmarks), Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
 	geocodingResponse := new(GeocodingResponse)
 	resp, err := s.sling.New().Get("reversegeocode.json").QueryStruct(landmarksParameters).ReceiveSuccess(geocodingResponse)
 	return geocodingResponse, resp, err

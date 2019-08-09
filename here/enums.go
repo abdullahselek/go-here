@@ -1,22 +1,22 @@
 package here
 
-// Route modes for Routing API.
-type Route int
+// Enum a kind of alias for int values.
+type Enum int
 
-type list struct {
-	Fastest         Route
-	Car             Route
-	TrafficDisabled Route
-	Enabled         Route
-	Pedestrian      Route
-	PublicTransport Route
-	Truck           Route
-	TrafficDefault  Route
-	Bicycle         Route
+type routeModeList struct {
+	Fastest         Enum
+	Car             Enum
+	TrafficDisabled Enum
+	Enabled         Enum
+	Pedestrian      Enum
+	PublicTransport Enum
+	Truck           Enum
+	TrafficDefault  Enum
+	Bicycle         Enum
 }
 
-// Mode for public use
-var Mode = &list{
+// RouteMode for public use.
+var RouteMode = &routeModeList{
 	Fastest:         0,
 	Car:             1,
 	TrafficDisabled: 2,
@@ -28,7 +28,8 @@ var Mode = &list{
 	Bicycle:         8,
 }
 
-func (routeMode Route) String() string {
+// ValueOfRouteMode returns value for RouteMode.
+func (routeMode Enum) ValueOfRouteMode() string {
 	modes := [...]string{
 		"fastest",
 		"car",
@@ -39,31 +40,38 @@ func (routeMode Route) String() string {
 		"truck",
 		"traffic:default",
 		"bicycle"}
-	if routeMode < Mode.Fastest || routeMode > Mode.TrafficDefault {
+	if routeMode < RouteMode.Fastest || routeMode > RouteMode.TrafficDefault {
 		return "Unknown"
 	}
 	return modes[routeMode]
 }
 
-// ReverseGeocodingMode modes for ReverseGeocoding API.
-type ReverseGeocodingMode int
+type reverseGeocodingList struct {
+	RetrieveAddresses Enum
+	RetrieveAreas     Enum
+	RetrieveLandmarks Enum
+	RetrieveAll       Enum
+	TrackPosition     Enum
+}
 
-const (
-	RetrieveAddresses ReverseGeocodingMode = 0
-	RetrieveAreas     ReverseGeocodingMode = 1
-	RetrieveLandmarks ReverseGeocodingMode = 2
-	RetrieveAll       ReverseGeocodingMode = 3
-	TrackPosition     ReverseGeocodingMode = 4
-)
+// ReverseGeocodingMode for public use
+var ReverseGeocodingMode = &reverseGeocodingList{
+	RetrieveAddresses: 0,
+	RetrieveAreas:     1,
+	RetrieveLandmarks: 2,
+	RetrieveAll:       3,
+	TrackPosition:     4,
+}
 
-func (reverseGeocodingMode ReverseGeocodingMode) String() string {
+// ValueOfReverseGeocodingMode returns value for ReverseGeocodingMode.
+func (reverseGeocodingMode Enum) ValueOfReverseGeocodingMode() string {
 	modes := [...]string{
 		"retrieveAddresses",
 		"retrieveAreas",
 		"retrieveLandmarks",
 		"retrieveAll",
 		"trackPosition"}
-	if reverseGeocodingMode < RetrieveAddresses || reverseGeocodingMode > TrackPosition {
+	if reverseGeocodingMode < ReverseGeocodingMode.RetrieveAddresses || reverseGeocodingMode > ReverseGeocodingMode.TrackPosition {
 		return "Unknown"
 	}
 	return modes[reverseGeocodingMode]

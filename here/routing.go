@@ -142,12 +142,12 @@ func createWaypoint(waypoint [2]float32) string {
 }
 
 // Creates routing parameters struct.
-func createRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, appID string, appCode string, modes []Route) RoutingParams {
+func createRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, appID string, appCode string, modes []Enum) RoutingParams {
 	stringWaypoint0 := createWaypoint(waypoint0)
 	stringWaypoint1 := createWaypoint(waypoint1)
 	var buffer bytes.Buffer
 	for _, routeMode := range modes {
-		mode := Route.String(routeMode)
+		mode := Enum.ValueOfRouteMode(routeMode)
 		buffer.WriteString(mode + ";")
 	}
 	routeModes := buffer.String()
@@ -164,7 +164,7 @@ func createRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, appID strin
 }
 
 // Route with given parameters.
-func (s *RoutingService) Route(waypoint0 [2]float32, waypoint1 [2]float32, modes []Route) (*RoutingResponse, *http.Response, error) {
+func (s *RoutingService) Route(waypoint0 [2]float32, waypoint1 [2]float32, modes []Enum) (*RoutingResponse, *http.Response, error) {
 	routingParams := createRoutingParams(waypoint0, waypoint1, s.AppID, s.AppCode, modes)
 	routes := new(RoutingResponse)
 	resp, err := s.sling.New().Get("verify_credentials.json").QueryStruct(routingParams).ReceiveSuccess(routes)

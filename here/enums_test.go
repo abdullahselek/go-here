@@ -7,15 +7,15 @@ import (
 )
 
 func TestRouteMode(t *testing.T) {
-	mode := Route.String(Mode.Fastest)
+	mode := Enum.ValueOfRouteMode(RouteMode.Fastest)
 	assert.Equal(t, mode, "fastest")
-	mode = Route.String(Mode.TrafficDefault)
+	mode = Enum.ValueOfRouteMode(RouteMode.TrafficDefault)
 	assert.Equal(t, mode, "traffic:default")
 }
 
 func TestReverseGeocodingMode(t *testing.T) {
-	mode := ReverseGeocodingMode.String(RetrieveAddresses)
+	mode := Enum.ValueOfReverseGeocodingMode(ReverseGeocodingMode.RetrieveAddresses)
 	assert.Equal(t, mode, "retrieveAddresses")
-	mode = ReverseGeocodingMode.String(TrackPosition)
+	mode = Enum.ValueOfReverseGeocodingMode(ReverseGeocodingMode.TrackPosition)
 	assert.Equal(t, mode, "trackPosition")
 }

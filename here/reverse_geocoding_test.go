@@ -15,7 +15,7 @@ func TestReverseGeocodingService_AddressFromLocation(t *testing.T) {
 	defer teardown()
 
 	client := NewReverseGeocodingClient(httpClient, "appID", "appCode")
-	geocodingResponse, _, err := client.ReverseGeocoding.AddressFromLocation([2]float32{42.3902, -71.1293}, 250, RetrieveAddresses, 1, 9)
+	geocodingResponse, _, err := client.ReverseGeocoding.AddressFromLocation([2]float32{42.3902, -71.1293}, 250, ReverseGeocodingMode.RetrieveAddresses, 1, 9)
 	assert.NotNil(t, geocodingResponse)
 	assert.Nil(t, err)
 }
