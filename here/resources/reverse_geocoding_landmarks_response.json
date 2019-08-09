@@ -1,0 +1,153 @@
+{
+    "Response": {
+      "MetaInfo": {
+        "Timestamp": "2019-08-09T18:23:05.774+0000"
+      },
+      "View": [
+        {
+          "_type": "SearchResultsViewType",
+          "ViewId": 0,
+          "Result": [
+            {
+              "Relevance": 1,
+              "Distance": -14382.7,
+              "MatchLevel": "landmark",
+              "MatchQuality": {
+                "Country": 1,
+                "State": 1,
+                "County": 1,
+                "City": 1,
+                "Street": [
+                  1
+                ],
+                "PostalCode": 1,
+                "Name": 1
+              },
+              "Location": {
+                "LocationId": "NT_7U3RMtjyjRsEmGe.YC4S8D_p_qGJMnk7VkrU-0Wr75xxCpC",
+                "LocationType": "park",
+                "Name": "Yosemite National Park",
+                "DisplayPosition": {
+                  "Latitude": 37.83935,
+                  "Longitude": -119.51678
+                },
+                "NavigationPosition": [
+                  {
+                    "Latitude": 37.74896,
+                    "Longitude": -119.58851
+                  }
+                ],
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 38.18491,
+                    "Longitude": -119.88604
+                  },
+                  "BottomRight": {
+                    "Latitude": 37.49379,
+                    "Longitude": -119.19545
+                  }
+                },
+                "Address": {
+                  "Label": "Village Dr, Yosemite National Park, CA 95389, United States",
+                  "Country": "USA",
+                  "State": "CA",
+                  "County": "Mariposa",
+                  "City": "Yosemite National Park",
+                  "Street": "Village Dr",
+                  "PostalCode": "95389",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "California",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Mariposa",
+                      "key": "CountyName"
+                    },
+                    {
+                      "value": "N",
+                      "key": "PostalCodeType"
+                    }
+                  ]
+                },
+                "MapReference": {
+                  "MapId": "NAAM19118",
+                  "MapVersion": "Q1/2019",
+                  "MapReleaseDate": "2019-07-16",
+                  "CountryId": "21000001",
+                  "StateId": "21009408",
+                  "CountyId": "21009811",
+                  "CityId": "21570523",
+                  "PlaceId": "17552007"
+                }
+              }
+            },
+            {
+              "Relevance": 1,
+              "Distance": 85.6,
+              "MatchLevel": "landmark",
+              "MatchQuality": {
+                "Country": 1,
+                "State": 1,
+                "County": 1,
+                "Name": 1
+              },
+              "Location": {
+                "LocationId": "NT_KBlc2R7KXwVDu-93bOXavD",
+                "LocationType": "river",
+                "Name": "Merced River",
+                "DisplayPosition": {
+                  "Latitude": 37.73003,
+                  "Longitude": -119.60889
+                },
+                "MapView": {
+                  "TopLeft": {
+                    "Latitude": 37.745,
+                    "Longitude": -119.67928
+                  },
+                  "BottomRight": {
+                    "Latitude": 37.71506,
+                    "Longitude": -119.56495
+                  }
+                },
+                "Address": {
+                  "Label": "CA, United States",
+                  "Country": "USA",
+                  "State": "CA",
+                  "County": "Mariposa",
+                  "AdditionalData": [
+                    {
+                      "value": "United States",
+                      "key": "CountryName"
+                    },
+                    {
+                      "value": "California",
+                      "key": "StateName"
+                    },
+                    {
+                      "value": "Mariposa",
+                      "key": "CountyName"
+                    }
+                  ]
+                },
+                "MapReference": {
+                  "MapId": "NAAM19118",
+                  "MapVersion": "Q1/2019",
+                  "MapReleaseDate": "2019-07-16",
+                  "CountryId": "21000001",
+                  "StateId": "21009408",
+                  "CountyId": "21009811",
+                  "PlaceId": "1406108692"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
