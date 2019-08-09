@@ -1,0 +1,18 @@
+# appveyor.yml
+build: off
+
+clone_folder: c:\gopath\src\github.com\abdullahselek\go-here
+
+environment:
+  GOPATH: c:\gopath
+
+stack:
+  - go 1.10
+  - go 1.11
+  - go 1.12
+
+before_test:
+  - go get -v -t ./here
+
+test_script:
+  - go test -v ./here
