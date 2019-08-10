@@ -5,9 +5,7 @@
 | Linux | [![Build Status](https://travis-ci.org/abdullahselek/go-here.svg?branch=master)](https://travis-ci.org/abdullahselek/go-here) |
 | Windows | [![Build status](https://ci.appveyor.com/api/projects/status/d9g1ehueqau9s57h?svg=true)](https://ci.appveyor.com/project/abdullahselek/go-here) |
 
-A Go wrapper around the HERE APIs.
-
-go-here is a Go client library for the [HERE API](https://developer.here.com). [HERE](https://www.here.com) provides location based services. HERE exposes [rest APIs](https://developer.here.com/develop/rest-apis) and this library is intended to make it even easier for Go programmers to use. Check the usage section or try the examples to see how to access the HERE API.
+**go-here** is a Go client library for the [HERE API](https://developer.here.com). [HERE](https://www.here.com) provides location based services. HERE exposes [rest APIs](https://developer.here.com/develop/rest-apis) and this library is intended to make it even easier for Go programmers to use. Check the usage section or try the examples to see how to access the HERE API.
 
 ### Features
 
@@ -57,3 +55,12 @@ geocodingResponse, httpResponse, err := reverseGeocodingClient.ReverseGeocoding.
 autocompleteGeocodingClient := here.NewAutocompleteGeocodingClient(httpClient, "appID", "appCode")
 autocompleteGeocodingResponse, httpResponse, err := autocompleteGeocodingClient.AutocompleteGeocoding.DetailsForSuggestion("Pariser 1 Berl")
 ```
+
+## Roadmap
+
+* Add new clients for other endpoints.
+* Use parameter structs on functions.
+
+## License
+
+[MIT License](https://github.com/abdullahselek/go-here/blob/master/LICENSE)
