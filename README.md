@@ -29,8 +29,6 @@ Read [GoDoc](https://godoc.org/github.com/abdullahselek/go-here/here)
 
 ## Usage
 
-### REST API
-
 The `here` package provides a `Client` for accessing the HERE API and each API service requires an AppID and AppKey. Here are some example requests.
 
 ```go
@@ -38,9 +36,6 @@ var httpClient = &http.Client{
     Timeout: time.Second * 15,
 }
 // Routing client
-var httpClient = &http.Client{
-		Timeout: time.Second * 15,
-	}
 routingClient := here.NewRoutingClient(httpClient, "appId", "appCode")
 routes, httpResponse, err := routingClient.Routing.Route([2]float32{52.5160, 13.3779}, [2]float32{52.5206, 13.3862}, []here.Enum{here.RouteMode.Fastest, here.RouteMode.Car, here.RouteMode.TrafficDefault})
 
@@ -49,5 +44,16 @@ geocodingClient := here.NewGeocodingClient(httpClient, "appId", "appCode")
 geocodingResponse, httpResponse, err := geocodingClient.Geocoding.AddressInBoundingBox("1 main", [2]float32{42.3902, -71.1293}, [2]float32{42.3312, -71.0228}, 9)
 
 // Partial address information
-geocodingResponse, httpResponse, err = geocodingClient.Geocoding.PartialAddressInformation(425, "randolph", "chicago", "usa", 9)
+geocodingResponse, httpResponse, err := geocodingClient.Geocoding.PartialAddressInformation(425, "randolph", "chicago", "usa", 9)
+
+// Reverse geocoding for address details
+reverseGeocodingClient := here.NewReverseGeocodingClient(httpClient, "appID", "appCode")
+geocodingResponse, httpResponse, err := reverseGeocodingClient.ReverseGeocoding.AddressFromLocation([2]float32{42.3902, -71.1293}, 250, here.ReverseGeocodingMode.RetrieveAddresses, 1, 9)
+
+// Reverse geocoding for landmark details
+geocodingResponse, httpResponse, err := reverseGeocodingClient.ReverseGeocoding.Landmarks([2]float32{42.3902, -71.1293}, 1, 9)
+
+// Complete location details
+autocompleteGeocodingClient := here.NewAutocompleteGeocodingClient(httpClient, "appID", "appCode")
+autocompleteGeocodingResponse, httpResponse, err := autocompleteGeocodingClient.AutocompleteGeocoding.DetailsForSuggestion("Pariser 1 Berl")
 ```
