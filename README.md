@@ -1,4 +1,4 @@
-# go-here [![codecov](https://codecov.io/gh/abdullahselek/go-here/branch/master/graph/badge.svg)](https://codecov.io/gh/abdullahselek/go-here) [![GoDoc](https://godoc.org/github.com/abdullahselek/go-here/here?status.svg)](https://godoc.org/github.com/abdullahselek/go-here/here)
+# go-here [![codecov](https://codecov.io/gh/abdullahselek/go-here/branch/master/graph/badge.svg)](https://codecov.io/gh/abdullahselek/go-here) [![GoDoc](https://godoc.org/github.com/abdullahselek/go-here/here?status.svg)](https://godoc.org/github.com/abdullahselek/go-here/here) [![Go Report Card](https://goreportcard.com/badge/abdullahselek/go-here)](https://goreportcard.com/report/abdullahselek/go-here)
 
 | Build Type | Status  |
 | ---        | ---     |
