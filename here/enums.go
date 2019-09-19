@@ -29,7 +29,7 @@ var RouteMode = &routeModeList{
 }
 
 // ValueOfRouteMode returns value for RouteMode.
-func (routeMode Enum) ValueOfRouteMode() string {
+func (mode Enum) ValueOfRouteMode() string {
 	modes := [...]string{
 		"fastest",
 		"car",
@@ -41,10 +41,10 @@ func (routeMode Enum) ValueOfRouteMode() string {
 		"traffic:default",
 		"bicycle",
 	}
-	if routeMode < RouteMode.Fastest || routeMode > RouteMode.TrafficDefault {
+	if mode < RouteMode.Fastest || mode > RouteMode.TrafficDefault {
 		return "Unknown"
 	}
-	return modes[routeMode]
+	return modes[mode]
 }
 
 type reverseGeocodingList struct {
@@ -65,7 +65,7 @@ var ReverseGeocodingMode = &reverseGeocodingList{
 }
 
 // ValueOfReverseGeocodingMode returns value for ReverseGeocodingMode.
-func (routeMode Enum) ValueOfReverseGeocodingMode() string {
+func (mode Enum) ValueOfReverseGeocodingMode() string {
 	modes := [...]string{
 		"retrieveAddresses",
 		"retrieveAreas",
@@ -73,8 +73,8 @@ func (routeMode Enum) ValueOfReverseGeocodingMode() string {
 		"retrieveAll",
 		"trackPosition",
 	}
-	if routeMode < ReverseGeocodingMode.RetrieveAddresses || routeMode > ReverseGeocodingMode.TrackPosition {
+	if mode < ReverseGeocodingMode.RetrieveAddresses || mode > ReverseGeocodingMode.TrackPosition {
 		return "Unknown"
 	}
-	return modes[routeMode]
+	return modes[mode]
 }
