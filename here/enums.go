@@ -39,7 +39,8 @@ func (routeMode Enum) ValueOfRouteMode() string {
 		"publicTransport",
 		"truck",
 		"traffic:default",
-		"bicycle"}
+		"bicycle",
+	}
 	if routeMode < RouteMode.Fastest || routeMode > RouteMode.TrafficDefault {
 		return "Unknown"
 	}
@@ -64,15 +65,16 @@ var ReverseGeocodingMode = &reverseGeocodingList{
 }
 
 // ValueOfReverseGeocodingMode returns value for ReverseGeocodingMode.
-func (reverseGeocodingMode Enum) ValueOfReverseGeocodingMode() string {
+func (routeMode Enum) ValueOfReverseGeocodingMode() string {
 	modes := [...]string{
 		"retrieveAddresses",
 		"retrieveAreas",
 		"retrieveLandmarks",
 		"retrieveAll",
-		"trackPosition"}
-	if reverseGeocodingMode < ReverseGeocodingMode.RetrieveAddresses || reverseGeocodingMode > ReverseGeocodingMode.TrackPosition {
+		"trackPosition",
+	}
+	if routeMode < ReverseGeocodingMode.RetrieveAddresses || routeMode > ReverseGeocodingMode.TrackPosition {
 		return "Unknown"
 	}
-	return modes[reverseGeocodingMode]
+	return modes[routeMode]
 }
