@@ -14,8 +14,9 @@ func TestGeocodingService_Route(t *testing.T) {
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
 
-	client := NewGeocodingClient(httpClient, "appID", "appCode")
-	geocodingResponse, _, err := client.Geocoding.Search("200 S Mathilda Sunnyvale CA", 9)
+	client := NewGeocodingClient(httpClient)
+	searchTextParams := &SearchTextParameters{SearchText: "200 S Mathilda Sunnyvale CA", AppID: "appID", AppCode: "appCode", Gen: 9}
+	geocodingResponse, _, err := client.Geocoding.Search(searchTextParams)
 	assert.NotNil(t, geocodingResponse)
 	assert.Nil(t, err)
 }
@@ -27,8 +28,9 @@ func TestGeocodingService_AddressInBoundingBox(t *testing.T) {
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
 
-	client := NewGeocodingClient(httpClient, "appID", "appCode")
-	geocodingResponse, _, err := client.Geocoding.AddressInBoundingBox("1 main", [2]float32{42.3902, -71.1293}, [2]float32{42.3312, -71.0228}, 9)
+	client := NewGeocodingClient(httpClient)
+	params := &AddressInBoundingBoxParameters{SearchText: "1 main", MapView: client.Geocoding.CreateMapView([2]float32{42.3902, -71.1293}, [2]float32{42.3312, -71.0228}), Gen: 9, AppID: "appID", AppCode: "appCode"}
+	geocodingResponse, _, err := client.Geocoding.AddressInBoundingBox(params)
 	assert.NotNil(t, geocodingResponse)
 	assert.Nil(t, err)
 }
@@ -40,8 +42,9 @@ func TestGeocodingService_PartialAddressInformation(t *testing.T) {
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
 
-	client := NewGeocodingClient(httpClient, "appID", "appCode")
-	geocodingResponse, _, err := client.Geocoding.PartialAddressInformation(425, "randolph", "chicago", "usa", 9)
+	client := NewGeocodingClient(httpClient)
+	params := &PartialAddressInformationParameters{HouseNumber: 425, Street: "randolph", City: "chicago", Country: "usa", Gen: 9, AppID: "appID", AppCode: "appCode"}
+	geocodingResponse, _, err := client.Geocoding.PartialAddressInformation(params)
 	assert.NotNil(t, geocodingResponse)
 	assert.Nil(t, err)
 }

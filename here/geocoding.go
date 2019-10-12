@@ -9,9 +9,7 @@ import (
 
 // GeocodingService provides for HERE Geocoding api.
 type GeocodingService struct {
-	sling   *sling.Sling
-	AppID   string
-	AppCode string
+	sling *sling.Sling
 }
 
 // SearchTextParameters parameters by search text for Geocoding Service.
@@ -104,24 +102,22 @@ type GeocodingResponse struct {
 }
 
 // newGeocodingService returns a new GeocodingService.
-func newGeocodingService(sling *sling.Sling, appID string, appCode string) *GeocodingService {
+func newGeocodingService(sling *sling.Sling) *GeocodingService {
 	return &GeocodingService{
-		sling:   sling,
-		AppID:   appID,
-		AppCode: appCode,
+		sling: sling,
 	}
 }
 
 // Search for geocode by text.
-func (s *GeocodingService) Search(text string, gen int) (*GeocodingResponse, *http.Response, error) {
-	searchTextParams := &SearchTextParameters{SearchText: text, AppID: s.AppID, AppCode: s.AppCode, Gen: gen}
+func (s *GeocodingService) Search(params *SearchTextParameters) (*GeocodingResponse, *http.Response, error) {
 	geocodingResponse := new(GeocodingResponse)
-	resp, err := s.sling.New().Get("geocode.json").QueryStruct(searchTextParams).ReceiveSuccess(geocodingResponse)
-	return geocodingResponse, resp, err
+	apiError := new(APIError)
+	resp, err := s.sling.New().Get("geocode.json").QueryStruct(params).Receive(geocodingResponse, apiError)
+	return geocodingResponse, resp, relevantError(err, *apiError)
 }
 
-// Creates mapview parameter with given latitudes and longitudes.
-func createMapView(latlong0 [2]float32, latlong1 [2]float32) string {
+// CreateMapView Creates mapview parameter with given latitudes and longitudes.
+func (s *GeocodingService) CreateMapView(latlong0 [2]float32, latlong1 [2]float32) string {
 	waypoint0 := createWaypoint(latlong0)
 	waypoint1 := createWaypoint(latlong1)
 	mapView := fmt.Sprintf("%s;%s", waypoint0, waypoint1)
@@ -129,17 +125,16 @@ func createMapView(latlong0 [2]float32, latlong1 [2]float32) string {
 }
 
 // AddressInBoundingBox by search text within given bounding box.
-func (s *GeocodingService) AddressInBoundingBox(searchText string, latlong0 [2]float32, latlong1 [2]float32, gen int) (*GeocodingResponse, *http.Response, error) {
-	searchTextParams := &AddressInBoundingBoxParameters{SearchText: searchText, MapView: createMapView(latlong0, latlong1), Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
+func (s *GeocodingService) AddressInBoundingBox(params *AddressInBoundingBoxParameters) (*GeocodingResponse, *http.Response, error) {
 	geocodingResponse := new(GeocodingResponse)
-	resp, err := s.sling.New().Get("geocode.json").QueryStruct(searchTextParams).ReceiveSuccess(geocodingResponse)
-	return geocodingResponse, resp, err
+	apiError := new(APIError)
+	resp, err := s.sling.New().Get("geocode.json").QueryStruct(params).Receive(geocodingResponse, apiError)
+	return geocodingResponse, resp, relevantError(err, *apiError)
 }
 
 // PartialAddressInformation requests the latitude, longitude and details of an address based on partial address information.
-func (s *GeocodingService) PartialAddressInformation(houseNumber int, street string, city string, country string, gen int) (*GeocodingResponse, *http.Response, error) {
-	partialAddressInformationParameters := &PartialAddressInformationParameters{HouseNumber: houseNumber, Street: street, City: city, Country: country, Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
+func (s *GeocodingService) PartialAddressInformation(params *PartialAddressInformationParameters) (*GeocodingResponse, *http.Response, error) {
 	geocodingResponse := new(GeocodingResponse)
-	resp, err := s.sling.New().Get("geocode.json").QueryStruct(partialAddressInformationParameters).ReceiveSuccess(geocodingResponse)
+	resp, err := s.sling.New().Get("geocode.json").QueryStruct(params).ReceiveSuccess(geocodingResponse)
 	return geocodingResponse, resp, err
 }
