@@ -1,6 +1,7 @@
 package here
 
 import (
+	"fmt"
 	"time"
 )
 
@@ -17,4 +18,24 @@ type APIError struct {
 		InterfaceVersion    string    `json:"interfaceVersion"`
 		AvailableMapVersion []string  `json:"availableMapVersion"`
 	} `json:"metaInfo"`
+}
+
+func (e APIError) Error() string {
+	if len(e.Details) > 0 {
+		return fmt.Sprintf("go-here: %v %v", e.ErrorType, e.Details)
+	}
+	return ""
+}
+
+// relevantError returns any non-nil http-related error (creating the request,
+// getting the response, decoding) if any. If the decoded apiError is non-zero
+// the apiError is returned. Otherwise, no errors occurred, returns nil.
+func relevantError(httpError error, apiError APIError) error {
+	if httpError != nil {
+		return httpError
+	}
+	if len(apiError.ErrorType) > 0 {
+		return apiError
+	}
+	return nil
 }

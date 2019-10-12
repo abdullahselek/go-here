@@ -14,8 +14,9 @@ func TestRoutingService_Route(t *testing.T) {
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
 
-	client := NewRoutingClient(httpClient, "appId", "appCode")
-	routes, _, err := client.Routing.Route([2]float32{52.5160, 13.3779}, [2]float32{52.5206, 13.3862}, []Enum{RouteMode.Fastest, RouteMode.Car, RouteMode.TrafficDefault})
+	client := NewRoutingClient(httpClient)
+	params := client.Routing.CreateRoutingParams([2]float32{52.5160, 13.3779}, [2]float32{52.5206, 13.3862}, "appID", "appCode", []Enum{RouteMode.Fastest, RouteMode.Car, RouteMode.TrafficDefault})
+	routes, _, err := client.Routing.Route(&params)
 	assert.NotNil(t, routes)
 	assert.Nil(t, err)
 }

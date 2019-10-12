@@ -11,9 +11,7 @@ import (
 
 // RoutingService provides for HERE routing api.
 type RoutingService struct {
-	sling   *sling.Sling
-	AppID   string
-	AppCode string
+	sling *sling.Sling
 }
 
 // RoutingParams parameters for Routing Service.
@@ -127,11 +125,9 @@ type RoutingResponse struct {
 }
 
 // newRoutingService returns a new RoutingService.
-func newRoutingService(sling *sling.Sling, appID string, appCode string) *RoutingService {
+func newRoutingService(sling *sling.Sling) *RoutingService {
 	return &RoutingService{
-		sling:   sling,
-		AppID:   appID,
-		AppCode: appCode,
+		sling: sling,
 	}
 }
 
@@ -141,8 +137,8 @@ func createWaypoint(waypoint [2]float32) string {
 	return waypoints
 }
 
-// Creates routing parameters struct.
-func createRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, appID string, appCode string, modes []Enum) RoutingParams {
+// CreateRoutingParams creates routing parameters struct.
+func (s *RoutingService) CreateRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, appID string, appCode string, modes []Enum) RoutingParams {
 	stringWaypoint0 := createWaypoint(waypoint0)
 	stringWaypoint1 := createWaypoint(waypoint1)
 	var buffer bytes.Buffer
@@ -164,9 +160,9 @@ func createRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, appID strin
 }
 
 // Route with given parameters.
-func (s *RoutingService) Route(waypoint0 [2]float32, waypoint1 [2]float32, modes []Enum) (*RoutingResponse, *http.Response, error) {
-	routingParams := createRoutingParams(waypoint0, waypoint1, s.AppID, s.AppCode, modes)
+func (s *RoutingService) Route(params *RoutingParams) (*RoutingResponse, *http.Response, error) {
 	routes := new(RoutingResponse)
-	resp, err := s.sling.New().Get("verify_credentials.json").QueryStruct(routingParams).ReceiveSuccess(routes)
-	return routes, resp, err
+	apiError := new(APIError)
+	resp, err := s.sling.New().Get("calculateroute.json").QueryStruct(params).Receive(routes, apiError)
+	return routes, resp, relevantError(err, *apiError)
 }
