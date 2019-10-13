@@ -9,9 +9,7 @@ import (
 
 // ReverseGeocodingService provides for HERE ReverseGeocoding api.
 type ReverseGeocodingService struct {
-	sling   *sling.Sling
-	AppID   string
-	AppCode string
+	sling *sling.Sling
 }
 
 // AddressFromLocationParameters used for fetching address from location.
@@ -34,11 +32,9 @@ type LandmarksParameters struct {
 }
 
 // newReverseGeocodingService returns a new GeocodingService.
-func newReverseGeocodingService(sling *sling.Sling, appID string, appCode string) *ReverseGeocodingService {
+func newReverseGeocodingService(sling *sling.Sling) *ReverseGeocodingService {
 	return &ReverseGeocodingService{
-		sling:   sling,
-		AppID:   appID,
-		AppCode: appCode,
+		sling: sling,
 	}
 }
 
@@ -48,18 +44,30 @@ func createProx(latlong [2]float32, diameter int) string {
 	return prox
 }
 
+// CreateAddressFromLocationParameters creates AddressFromLocationParameters used for fetching address from location.
+func (s *ReverseGeocodingService) CreateAddressFromLocationParameters(latlong [2]float32, diameter int, mode Enum, maxResults int, gen int, appID string, appCode string) AddressFromLocationParameters {
+	addressFromLocationParameters := AddressFromLocationParameters{Prox: createProx(latlong, diameter), Mode: Enum.ValueOfReverseGeocodingMode(mode), MaxResults: maxResults, Gen: gen, AppID: appID, AppCode: appCode}
+	return addressFromLocationParameters
+}
+
+// CreateLandmarksParameters creates LandmarksParameters used for fetching address from location.
+func (s *ReverseGeocodingService) CreateLandmarksParameters(latlong [2]float32, diameter int, gen int, appID string, appCode string) LandmarksParameters {
+	landmarksParameters := LandmarksParameters{Prox: createProx(latlong, diameter), Mode: Enum.ValueOfReverseGeocodingMode(ReverseGeocodingMode.RetrieveLandmarks), Gen: gen, AppID: appID, AppCode: appCode}
+	return landmarksParameters
+}
+
 // AddressFromLocation returns address or addresses from given location.
-func (s *ReverseGeocodingService) AddressFromLocation(latlong [2]float32, diameter int, mode Enum, maxResults int, gen int) (*GeocodingResponse, *http.Response, error) {
-	addressFromLocationParameters := &AddressFromLocationParameters{Prox: createProx(latlong, diameter), Mode: Enum.ValueOfReverseGeocodingMode(mode), MaxResults: maxResults, Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
+func (s *ReverseGeocodingService) AddressFromLocation(params *AddressFromLocationParameters) (*GeocodingResponse, *http.Response, error) {
 	geocodingResponse := new(GeocodingResponse)
-	resp, err := s.sling.New().Get("reversegeocode.json").QueryStruct(addressFromLocationParameters).ReceiveSuccess(geocodingResponse)
-	return geocodingResponse, resp, err
+	apiError := new(APIError)
+	resp, err := s.sling.New().Get("reversegeocode.json").QueryStruct(params).Receive(geocodingResponse, apiError)
+	return geocodingResponse, resp, relevantError(err, *apiError)
 }
 
 // Landmarks returns details of landmarks near to a given latitude and longitude.
-func (s *ReverseGeocodingService) Landmarks(latlong [2]float32, diameter int, gen int) (*GeocodingResponse, *http.Response, error) {
-	landmarksParameters := &LandmarksParameters{Prox: createProx(latlong, diameter), Mode: Enum.ValueOfReverseGeocodingMode(ReverseGeocodingMode.RetrieveLandmarks), Gen: gen, AppID: s.AppID, AppCode: s.AppCode}
+func (s *ReverseGeocodingService) Landmarks(params *LandmarksParameters) (*GeocodingResponse, *http.Response, error) {
 	geocodingResponse := new(GeocodingResponse)
-	resp, err := s.sling.New().Get("reversegeocode.json").QueryStruct(landmarksParameters).ReceiveSuccess(geocodingResponse)
-	return geocodingResponse, resp, err
+	apiError := new(APIError)
+	resp, err := s.sling.New().Get("reversegeocode.json").QueryStruct(params).Receive(geocodingResponse, apiError)
+	return geocodingResponse, resp, relevantError(err, *apiError)
 }

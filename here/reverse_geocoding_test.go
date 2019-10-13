@@ -14,8 +14,9 @@ func TestReverseGeocodingService_AddressFromLocation(t *testing.T) {
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
 
-	client := NewReverseGeocodingClient(httpClient, "appID", "appCode")
-	geocodingResponse, _, err := client.ReverseGeocoding.AddressFromLocation([2]float32{42.3902, -71.1293}, 250, ReverseGeocodingMode.RetrieveAddresses, 1, 9)
+	client := NewReverseGeocodingClient(httpClient)
+	params := client.ReverseGeocoding.CreateAddressFromLocationParameters([2]float32{42.3902, -71.1293}, 250, ReverseGeocodingMode.RetrieveAddresses, 1, 9, "appID", "appCode")
+	geocodingResponse, _, err := client.ReverseGeocoding.AddressFromLocation(&params)
 	assert.NotNil(t, geocodingResponse)
 	assert.Nil(t, err)
 }
@@ -27,8 +28,9 @@ func TestReverseGeocodingService_Landmarks(t *testing.T) {
 	httpClient, teardown := testingHTTPClient(h)
 	defer teardown()
 
-	client := NewReverseGeocodingClient(httpClient, "appID", "appCode")
-	geocodingResponse, _, err := client.ReverseGeocoding.Landmarks([2]float32{42.3902, -71.1293}, 1, 9)
+	client := NewReverseGeocodingClient(httpClient)
+	params := client.ReverseGeocoding.CreateLandmarksParameters([2]float32{42.3902, -71.1293}, 1, 9, "appID", "appCode")
+	geocodingResponse, _, err := client.ReverseGeocoding.Landmarks(&params)
 	assert.NotNil(t, geocodingResponse)
 	assert.Nil(t, err)
 }
