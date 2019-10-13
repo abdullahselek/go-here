@@ -29,10 +29,12 @@ func main() {
 	partialAddressInformationParams := &here.PartialAddressInformationParameters{HouseNumber: 425, Street: "randolph", City: "chicago", Country: "usa", Gen: 9, AppID: "appID", AppCode: "appCode"}
 	geocodingResponse, httpResponse, err = geocodingClient.Geocoding.PartialAddressInformation(partialAddressInformationParams)
 
-	reverseGeocodingClient := here.NewReverseGeocodingClient(httpClient, "appID", "appCode")
-	geocodingResponse, httpResponse, err = reverseGeocodingClient.ReverseGeocoding.AddressFromLocation([2]float32{42.3902, -71.1293}, 250, here.ReverseGeocodingMode.RetrieveAddresses, 1, 9)
+	reverseGeocodingClient := here.NewReverseGeocodingClient(httpClient)
+	locationParameters := reverseGeocodingClient.ReverseGeocoding.CreateAddressFromLocationParameters([2]float32{42.3902, -71.1293}, 250, here.ReverseGeocodingMode.RetrieveAddresses, 1, 9, "appID", "appCode")
+	geocodingResponse, httpResponse, err = reverseGeocodingClient.ReverseGeocoding.AddressFromLocation(&locationParameters)
 
-	geocodingResponse, httpResponse, err = reverseGeocodingClient.ReverseGeocoding.Landmarks([2]float32{42.3902, -71.1293}, 1, 9)
+	landmarkParameters := reverseGeocodingClient.ReverseGeocoding.CreateLandmarksParameters([2]float32{42.3902, -71.1293}, 1, 9, "appID", "appCode")
+	geocodingResponse, httpResponse, err = reverseGeocodingClient.ReverseGeocoding.Landmarks(&landmarkParameters)
 
 	autocompleteGeocodingClient := here.NewAutocompleteGeocodingClient(httpClient, "appID", "appCode")
 	autocompleteGeocodingResponse, httpResponse, err := autocompleteGeocodingClient.AutocompleteGeocoding.DetailsForSuggestion("Pariser 1 Berl")
