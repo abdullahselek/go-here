@@ -34,32 +34,38 @@ var httpClient = &http.Client{
     Timeout: time.Second * 15,
 }
 // Routing client
-routingClient := here.NewRoutingClient(httpClient, "appId", "appCode")
-routes, httpResponse, err := routingClient.Routing.Route([2]float32{52.5160, 13.3779}, [2]float32{52.5206, 13.3862}, []here.Enum{here.RouteMode.Fastest, here.RouteMode.Car, here.RouteMode.TrafficDefault})
+routingClient := here.NewRoutingClient(httpClient)
+routingParams := routingClient.Routing.CreateRoutingParams([2]float32{52.5160, 13.3779}, [2]float32{52.5206, 13.3862}, "appID", "appCode", []here.Enum{here.RouteMode.Fastest, here.RouteMode.Car, here.RouteMode.TrafficDefault})
+routes, httpResponse, err := routingClient.Routing.Route(&routingParams)
 
 // Finding Address in boundingbox
-geocodingClient := here.NewGeocodingClient(httpClient, "appId", "appCode")
-geocodingResponse, httpResponse, err := geocodingClient.Geocoding.AddressInBoundingBox("1 main", [2]float32{42.3902, -71.1293}, [2]float32{42.3312, -71.0228}, 9)
+geocodingClient := here.NewGeocodingClient(httpClient)
+addressBoundingBoxParams := here.AddressInBoundingBoxParameters{SearchText: "1 main", MapView: geocodingClient.Geocoding.CreateMapView([2]float32{42.3902, -71.1293}, [2]float32{42.3312, -71.0228}), Gen: 9, AppID: "appID", AppCode: "appCode"}
+geocodingResponse, httpResponse, err := geocodingClient.Geocoding.AddressInBoundingBox(&addressBoundingBoxParams)
 
 // Partial address information
-geocodingResponse, httpResponse, err := geocodingClient.Geocoding.PartialAddressInformation(425, "randolph", "chicago", "usa", 9)
+partialAddressInformationParams := here.PartialAddressInformationParameters{HouseNumber: 425, Street: "randolph", City: "chicago", Country: "usa", Gen: 9, AppID: "appID", AppCode: "appCode"}
+geocodingResponse, httpResponse, err = geocodingClient.Geocoding.PartialAddressInformation(&partialAddressInformationParams)
 
 // Reverse geocoding for address details
-reverseGeocodingClient := here.NewReverseGeocodingClient(httpClient, "appID", "appCode")
-geocodingResponse, httpResponse, err := reverseGeocodingClient.ReverseGeocoding.AddressFromLocation([2]float32{42.3902, -71.1293}, 250, here.ReverseGeocodingMode.RetrieveAddresses, 1, 9)
+reverseGeocodingClient := here.NewReverseGeocodingClient(httpClient)
+locationParameters := reverseGeocodingClient.ReverseGeocoding.CreateAddressFromLocationParameters([2]float32{42.3902, -71.1293}, 250, here.ReverseGeocodingMode.RetrieveAddresses, 1, 9, "appID", "appCode")
+geocodingResponse, httpResponse, err := reverseGeocodingClient.ReverseGeocoding.AddressFromLocation(&locationParameters)
 
 // Reverse geocoding for landmark details
-geocodingResponse, httpResponse, err := reverseGeocodingClient.ReverseGeocoding.Landmarks([2]float32{42.3902, -71.1293}, 1, 9)
+landmarkParameters := reverseGeocodingClient.ReverseGeocoding.CreateLandmarksParameters([2]float32{42.3902, -71.1293}, 1, 9, "appID", "appCode")
+geocodingResponse, httpResponse, err := reverseGeocodingClient.ReverseGeocoding.Landmarks(&landmarkParameters)
 
 // Complete location details
-autocompleteGeocodingClient := here.NewAutocompleteGeocodingClient(httpClient, "appID", "appCode")
-autocompleteGeocodingResponse, httpResponse, err := autocompleteGeocodingClient.AutocompleteGeocoding.DetailsForSuggestion("Pariser 1 Berl")
+autocompleteGeocodingClient := here.NewAutocompleteGeocodingClient(httpClient)
+suggestionsParameters := autocompleteGeocodingClient.AutocompleteGeocoding.CreateDetailsForSuggestionParameters("Pariser 1 Berl", "appID", "appCode")
+autocompleteGeocodingResponse, httpResponse, err := autocompleteGeocodingClient.AutocompleteGeocoding.DetailsForSuggestion(&suggestionsParameters)
 ```
 
 ## Roadmap
 
 * Add new clients for other endpoints.
-* Use parameter structs on functions.
+* ~~Use parameter structs on functions.~~
 
 ## License
 

@@ -20,14 +20,14 @@ func main() {
 	fmt.Println(err)
 
 	geocodingClient := here.NewGeocodingClient(httpClient)
-	addressBoundingBoxParams := &here.AddressInBoundingBoxParameters{SearchText: "1 main", MapView: geocodingClient.Geocoding.CreateMapView([2]float32{42.3902, -71.1293}, [2]float32{42.3312, -71.0228}), Gen: 9, AppID: "appID", AppCode: "appCode"}
-	geocodingResponse, httpResponse, err := geocodingClient.Geocoding.AddressInBoundingBox(addressBoundingBoxParams)
+	addressBoundingBoxParams := here.AddressInBoundingBoxParameters{SearchText: "1 main", MapView: geocodingClient.Geocoding.CreateMapView([2]float32{42.3902, -71.1293}, [2]float32{42.3312, -71.0228}), Gen: 9, AppID: "appID", AppCode: "appCode"}
+	geocodingResponse, httpResponse, err := geocodingClient.Geocoding.AddressInBoundingBox(&addressBoundingBoxParams)
 	fmt.Println(geocodingResponse)
 	fmt.Println(httpResponse)
 	fmt.Println(err)
 
-	partialAddressInformationParams := &here.PartialAddressInformationParameters{HouseNumber: 425, Street: "randolph", City: "chicago", Country: "usa", Gen: 9, AppID: "appID", AppCode: "appCode"}
-	geocodingResponse, httpResponse, err = geocodingClient.Geocoding.PartialAddressInformation(partialAddressInformationParams)
+	partialAddressInformationParams := here.PartialAddressInformationParameters{HouseNumber: 425, Street: "randolph", City: "chicago", Country: "usa", Gen: 9, AppID: "appID", AppCode: "appCode"}
+	geocodingResponse, httpResponse, err = geocodingClient.Geocoding.PartialAddressInformation(&partialAddressInformationParams)
 
 	reverseGeocodingClient := here.NewReverseGeocodingClient(httpClient)
 	locationParameters := reverseGeocodingClient.ReverseGeocoding.CreateAddressFromLocationParameters([2]float32{42.3902, -71.1293}, 250, here.ReverseGeocodingMode.RetrieveAddresses, 1, 9, "appID", "appCode")
