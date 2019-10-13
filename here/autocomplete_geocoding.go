@@ -9,9 +9,7 @@ import (
 
 // AutocompleteGeocodingService provides for HERE AutocompleteGeocoding api.
 type AutocompleteGeocodingService struct {
-	sling   *sling.Sling
-	AppID   string
-	AppCode string
+	sling *sling.Sling
 }
 
 // DetailsForSuggestionParameters parameters by search text for Geocoding Service.
@@ -43,18 +41,22 @@ type AutocompleteGeocodingResponse struct {
 }
 
 // newAutocompleteGeocodingService returns a new AutocompleteGeocodingService.
-func newAutocompleteGeocodingService(sling *sling.Sling, appID string, appCode string) *AutocompleteGeocodingService {
+func newAutocompleteGeocodingService(sling *sling.Sling) *AutocompleteGeocodingService {
 	return &AutocompleteGeocodingService{
-		sling:   sling,
-		AppID:   appID,
-		AppCode: appCode,
+		sling: sling,
 	}
 }
 
+// CreateDetailsForSuggestionParameters creates DetailsForSuggestionParameters parameters by search text for Geocoding Service.
+func (s *AutocompleteGeocodingService) CreateDetailsForSuggestionParameters(query string, appID string, appCode string) DetailsForSuggestionParameters {
+	detailsForSuggestionParameters := DetailsForSuggestionParameters{Query: url.QueryEscape(query), AppID: appID, AppCode: appCode}
+	return detailsForSuggestionParameters
+}
+
 // DetailsForSuggestion returns a list of address suggestions for the search text.
-func (s *AutocompleteGeocodingService) DetailsForSuggestion(query string) (*AutocompleteGeocodingResponse, *http.Response, error) {
-	detailsForSuggestionParameters := &DetailsForSuggestionParameters{Query: url.QueryEscape(query), AppID: s.AppID, AppCode: s.AppCode}
+func (s *AutocompleteGeocodingService) DetailsForSuggestion(params *DetailsForSuggestionParameters) (*AutocompleteGeocodingResponse, *http.Response, error) {
 	autocompleteGeocodingResponse := new(AutocompleteGeocodingResponse)
-	resp, err := s.sling.New().Get("suggest.json").QueryStruct(detailsForSuggestionParameters).ReceiveSuccess(autocompleteGeocodingResponse)
-	return autocompleteGeocodingResponse, resp, err
+	apiError := new(APIError)
+	resp, err := s.sling.New().Get("suggest.json").QueryStruct(&params).Receive(autocompleteGeocodingResponse, apiError)
+	return autocompleteGeocodingResponse, resp, relevantError(err, *apiError)
 }
