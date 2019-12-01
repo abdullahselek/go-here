@@ -1,6 +1,7 @@
 package here
 
 import (
+	"net/http"
 	"time"
 
 	"github.com/dghubble/sling"
@@ -13,7 +14,7 @@ type WeatherService struct {
 
 // SevereWeatherAlertsParams parameters for severe alerts.
 type SevereWeatherAlertsParams struct {
-	Product string `url:"product"`
+	Product string `url:"product" default0:"alerts"`
 	Name    string `url:"name"`
 	AppID   string `url:"app_id"`
 	AppCode string `url:"app_code"`
@@ -49,4 +50,12 @@ func newWeatherService(sling *sling.Sling) *WeatherService {
 	return &WeatherService{
 		sling: sling,
 	}
+}
+
+// SevereWeatherAlerts fetches severe weather alert results.
+func (s *WeatherService) SevereWeatherAlerts(params *SevereWeatherAlertsParams) (*SevereWeatherAlertsResponse, *http.Response, error) {
+	weatherAlerts := new(SevereWeatherAlertsResponse)
+	apiError := new(APIError)
+	resp, err := s.sling.New().Get("report.json").QueryStruct(params).Receive(weatherAlerts, apiError)
+	return weatherAlerts, resp, relevantError(err, *apiError)
 }

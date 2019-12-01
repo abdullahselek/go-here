@@ -55,7 +55,7 @@ func NewAutocompleteGeocodingClient(httpClient *http.Client) *Client {
 
 // NewWeatherClient returns a new WeatherService.
 func NewWeatherClient(httpClient *http.Client) *Client {
-	base := sling.New().Client(httpClient).Base("https://weather.api.here.com/weather/1.0/report.json")
+	base := sling.New().Client(httpClient).Base("https://weather.api.here.com/weather/1.0/")
 	return &Client{
 		sling:   base,
 		Weather: newWeatherService(base.New()),

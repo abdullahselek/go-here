@@ -15,3 +15,21 @@ func TestWeatherService(t *testing.T) {
 	client := NewWeatherClient(httpClient)
 	assert.NotNil(t, client)
 }
+
+func TestWeatherService_SevereWeatherAlerts(t *testing.T) {
+	h := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Write(readJSONFile("resources/severe_weather_alerts.json"))
+	})
+	httpClient, teardown := testingHTTPClient(h)
+	defer teardown()
+
+	client := NewWeatherClient(httpClient)
+	weatherAlerts := SevereWeatherAlertsParams{
+		Name:    "Boston",
+		AppID:   "appID",
+		AppCode: "appCode",
+	}
+	severeWeatherAlerts, _, err := client.Weather.SevereWeatherAlerts(&weatherAlerts)
+	assert.NotNil(t, severeWeatherAlerts)
+	assert.Nil(t, err)
+}
