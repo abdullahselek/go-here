@@ -14,6 +14,7 @@ type Client struct {
 	Geocoding             *GeocodingService
 	ReverseGeocoding      *ReverseGeocodingService
 	AutocompleteGeocoding *AutocompleteGeocodingService
+	Weather               *WeatherService
 }
 
 // NewRoutingClient returns a new RoutingClient.
@@ -49,5 +50,14 @@ func NewAutocompleteGeocodingClient(httpClient *http.Client) *Client {
 	return &Client{
 		sling:                 base,
 		AutocompleteGeocoding: newAutocompleteGeocodingService(base.New()),
+	}
+}
+
+// NewWeatherClient returns a new WeatherService.
+func NewWeatherClient(httpClient *http.Client) *Client {
+	base := sling.New().Client(httpClient).Base("https://weather.api.here.com/weather/1.0/report.json")
+	return &Client{
+		sling:   base,
+		Weather: newWeatherService(base.New()),
 	}
 }
