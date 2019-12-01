@@ -11,7 +11,14 @@ type WeatherService struct {
 	sling *sling.Sling
 }
 
-// SevereWeatherAlertsResponse model for sever alerts.
+// SevereWeatherAlertsParams parameters for severe alerts.
+type SevereWeatherAlertsParams struct {
+	Product string `url:"product"`
+	Name    string `url:"name"`
+	AppID   string `url:"app_id"`
+	AppCode string `url:"app_code"`
+}
+
 // SevereWeatherAlertsResponse model for severe alerts.
 type SevereWeatherAlertsResponse struct {
 	Alerts struct {
