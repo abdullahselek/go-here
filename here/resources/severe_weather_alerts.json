@@ -1,0 +1,123 @@
+{
+    "alerts": {
+      "alerts": [
+        {
+          "timeSegment": [
+            {
+              "value": "",
+              "segment": "A",
+              "otherAttributes": {},
+              "day_of_week": "1"
+            },
+            {
+              "value": "",
+              "segment": "E",
+              "otherAttributes": {},
+              "day_of_week": "1"
+            },
+            {
+              "value": "",
+              "segment": "N",
+              "otherAttributes": {},
+              "day_of_week": "1"
+            },
+            {
+              "value": "",
+              "segment": "M",
+              "otherAttributes": {},
+              "day_of_week": "2"
+            },
+            {
+              "value": "",
+              "segment": "A",
+              "otherAttributes": {},
+              "day_of_week": "2"
+            },
+            {
+              "value": "",
+              "segment": "E",
+              "otherAttributes": {},
+              "day_of_week": "2"
+            },
+            {
+              "value": "",
+              "segment": "N",
+              "otherAttributes": {},
+              "day_of_week": "2"
+            }
+          ],
+          "type": "4",
+          "description": "Heavy rain anticipated"
+        },
+        {
+          "timeSegment": [
+            {
+              "value": "",
+              "segment": "A",
+              "otherAttributes": {},
+              "day_of_week": "1"
+            },
+            {
+              "value": "",
+              "segment": "E",
+              "otherAttributes": {},
+              "day_of_week": "2"
+            },
+            {
+              "value": "",
+              "segment": "N",
+              "otherAttributes": {},
+              "day_of_week": "2"
+            },
+            {
+              "value": "",
+              "segment": "M",
+              "otherAttributes": {},
+              "day_of_week": "3"
+            }
+          ],
+          "type": "13",
+          "description": "Snow advisory"
+        },
+        {
+          "timeSegment": [
+            {
+              "value": "",
+              "segment": "N",
+              "otherAttributes": {},
+              "day_of_week": "1"
+            },
+            {
+              "value": "",
+              "segment": "M",
+              "otherAttributes": {},
+              "day_of_week": "2"
+            },
+            {
+              "value": "",
+              "segment": "A",
+              "otherAttributes": {},
+              "day_of_week": "2"
+            },
+            {
+              "value": "",
+              "segment": "E",
+              "otherAttributes": {},
+              "day_of_week": "2"
+            }
+          ],
+          "type": "32",
+          "description": "Small craft advisory anticipated"
+        }
+      ],
+      "country": "United States",
+      "state": "Massachusetts",
+      "city": "Boston",
+      "latitude": 42.35843,
+      "longitude": -71.05977,
+      "timezone": -5
+    },
+    "feedCreation": "2019-12-01T21:43:16.704Z",
+    "metric": true
+  }
+  
