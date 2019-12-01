@@ -78,3 +78,41 @@ func (mode Enum) ValueOfReverseGeocodingMode() string {
 	}
 	return modes[mode]
 }
+
+type weatherProductList struct {
+	Observation         Enum
+	Forecast7days       Enum
+	Forecast7DaysSimple Enum
+	ForecastHourly      Enum
+	ForecastAstronomy   Enum
+	Alerts              Enum
+	NwsAlerts           Enum
+}
+
+// WeatherProduct for public use
+var WeatherProduct = &weatherProductList{
+	Observation:         0,
+	Forecast7days:       1,
+	Forecast7DaysSimple: 2,
+	ForecastHourly:      3,
+	ForecastAstronomy:   4,
+	Alerts:              5,
+	NwsAlerts:           6,
+}
+
+// ValueOfWeatherProduct returns value for WeatherProduct.
+func (mode Enum) ValueOfWeatherProduct() string {
+	modes := [...]string{
+		"observation",
+		"forecast_7days",
+		"forecast_7days_simple",
+		"forecast_hourly",
+		"forecast_astronomy",
+		"alerts",
+		"nws_alerts",
+	}
+	if mode < WeatherProduct.Observation || mode > WeatherProduct.NwsAlerts {
+		return "Unknown"
+	}
+	return modes[mode]
+}
