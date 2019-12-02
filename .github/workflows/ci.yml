@@ -1,0 +1,24 @@
+on: [push, pull_request]
+name: Go HERE CI
+jobs:
+  test:
+    strategy:
+      matrix:
+        go-version: [1.10.x, 1.11.x, 1.12.x, 1.13.x]
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v1
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout code
+      uses: actions/checkout@v1
+    - name: Lint
+      run: go get golang.org/x/lint/golint
+    - name: Install
+      run: go get github.com/abdullahselek/go-here/here
+    - name: Test
+      run: go test ./here -race -coverprofile=coverage.txt -covermode=atomic
+    - name: Codecov
+      run: bash <(curl -s https://codecov.io/bash) -X fix
