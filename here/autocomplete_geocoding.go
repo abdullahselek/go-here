@@ -14,9 +14,8 @@ type AutocompleteGeocodingService struct {
 
 // DetailsForSuggestionParameters parameters by search text for Geocoding Service.
 type DetailsForSuggestionParameters struct {
-	Query   string `url:"query"`
-	AppID   string `url:"app_id"`
-	AppCode string `url:"app_code"`
+	Query  string `url:"query"`
+	APIKey string `url:"apikey"`
 }
 
 // AutocompleteGeocodingResponse response model for autocomplete geocoding service.
@@ -48,8 +47,8 @@ func newAutocompleteGeocodingService(sling *sling.Sling) *AutocompleteGeocodingS
 }
 
 // CreateDetailsForSuggestionParameters creates DetailsForSuggestionParameters parameters by search text for Geocoding Service.
-func (s *AutocompleteGeocodingService) CreateDetailsForSuggestionParameters(query string, appID string, appCode string) DetailsForSuggestionParameters {
-	detailsForSuggestionParameters := DetailsForSuggestionParameters{Query: url.QueryEscape(query), AppID: appID, AppCode: appCode}
+func (s *AutocompleteGeocodingService) CreateDetailsForSuggestionParameters(query string, apiKey string) DetailsForSuggestionParameters {
+	detailsForSuggestionParameters := DetailsForSuggestionParameters{Query: url.QueryEscape(query), APIKey: apiKey}
 	return detailsForSuggestionParameters
 }
 

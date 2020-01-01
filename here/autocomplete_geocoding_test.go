@@ -15,7 +15,7 @@ func TestAutocompleteGeocodingService_DetailsForSuggestion(t *testing.T) {
 	defer teardown()
 
 	client := NewAutocompleteGeocodingClient(httpClient)
-	params := client.AutocompleteGeocoding.CreateDetailsForSuggestionParameters("Pariser 1 Berl", "appID", "appCode")
+	params := client.AutocompleteGeocoding.CreateDetailsForSuggestionParameters("Pariser 1 Berl", "apiKey")
 	autocompleteGeocodingResponse, _, err := client.AutocompleteGeocoding.DetailsForSuggestion(&params)
 	assert.Equal(t, len(autocompleteGeocodingResponse.Suggestions), 5)
 	assert.Nil(t, err)
