@@ -18,8 +18,7 @@ type RoutingService struct {
 type RoutingParams struct {
 	Waypoint0 string `url:"waypoint0"`
 	Waypoint1 string `url:"waypoint1"`
-	AppID     string `url:"app_id"`
-	AppCode   string `url:"app_code"`
+	APIKey    string `url:"apikey"`
 	Modes     string `url:"mode"`
 	Departure string `url:"departure"`
 }
@@ -138,7 +137,7 @@ func createWaypoint(waypoint [2]float32) string {
 }
 
 // CreateRoutingParams creates routing parameters struct.
-func (s *RoutingService) CreateRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, appID string, appCode string, modes []Enum) RoutingParams {
+func (s *RoutingService) CreateRoutingParams(waypoint0 [2]float32, waypoint1 [2]float32, apiKey string, modes []Enum) RoutingParams {
 	stringWaypoint0 := createWaypoint(waypoint0)
 	stringWaypoint1 := createWaypoint(waypoint1)
 	var buffer bytes.Buffer
@@ -151,8 +150,7 @@ func (s *RoutingService) CreateRoutingParams(waypoint0 [2]float32, waypoint1 [2]
 	routingParams := RoutingParams{
 		Waypoint0: stringWaypoint0,
 		Waypoint1: stringWaypoint1,
-		AppID:     appID,
-		AppCode:   appCode,
+		APIKey:    apiKey,
 		Modes:     routeModes,
 		Departure: "now",
 	}
