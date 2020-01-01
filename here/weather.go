@@ -16,8 +16,7 @@ type WeatherService struct {
 type SevereWeatherAlertsParams struct {
 	Product string `url:"product" default0:"alerts"`
 	Name    string `url:"name"`
-	AppID   string `url:"app_id"`
-	AppCode string `url:"app_code"`
+	APIKey  string `url:"apiKey"`
 }
 
 // SevereWeatherAlertsResponse model for severe alerts.

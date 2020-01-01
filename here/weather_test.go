@@ -25,9 +25,8 @@ func TestWeatherService_SevereWeatherAlerts(t *testing.T) {
 
 	client := NewWeatherClient(httpClient)
 	weatherAlerts := SevereWeatherAlertsParams{
-		Name:    "Boston",
-		AppID:   "appID",
-		AppCode: "appCode",
+		Name:   "Boston",
+		APIKey: "apiKey",
 	}
 	severeWeatherAlerts, _, err := client.Weather.SevereWeatherAlerts(&weatherAlerts)
 	assert.NotNil(t, severeWeatherAlerts)
