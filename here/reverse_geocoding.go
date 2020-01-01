@@ -18,17 +18,15 @@ type AddressFromLocationParameters struct {
 	Mode       string `url:"mode"`
 	MaxResults int    `url:"maxresults"`
 	Gen        int    `url:"gen"`
-	AppID      string `url:"app_id"`
-	AppCode    string `url:"app_code"`
+	APIKey     string `url:"apiKey"`
 }
 
 // LandmarksParameters used for fetching address from location.
 type LandmarksParameters struct {
-	Prox    string `url:"prox"`
-	Mode    string `url:"mode"`
-	Gen     int    `url:"gen"`
-	AppID   string `url:"app_id"`
-	AppCode string `url:"app_code"`
+	Prox   string `url:"prox"`
+	Mode   string `url:"mode"`
+	Gen    int    `url:"gen"`
+	APIKey string `url:"apiKey"`
 }
 
 // newReverseGeocodingService returns a new GeocodingService.
@@ -45,14 +43,14 @@ func createProx(latlong [2]float32, diameter int) string {
 }
 
 // CreateAddressFromLocationParameters creates AddressFromLocationParameters used for fetching address from location.
-func (s *ReverseGeocodingService) CreateAddressFromLocationParameters(latlong [2]float32, diameter int, mode Enum, maxResults int, gen int, appID string, appCode string) AddressFromLocationParameters {
-	addressFromLocationParameters := AddressFromLocationParameters{Prox: createProx(latlong, diameter), Mode: Enum.ValueOfReverseGeocodingMode(mode), MaxResults: maxResults, Gen: gen, AppID: appID, AppCode: appCode}
+func (s *ReverseGeocodingService) CreateAddressFromLocationParameters(latlong [2]float32, diameter int, mode Enum, maxResults int, gen int, apiKey string) AddressFromLocationParameters {
+	addressFromLocationParameters := AddressFromLocationParameters{Prox: createProx(latlong, diameter), Mode: Enum.ValueOfReverseGeocodingMode(mode), MaxResults: maxResults, Gen: gen, APIKey: apiKey}
 	return addressFromLocationParameters
 }
 
 // CreateLandmarksParameters creates LandmarksParameters used for fetching address from location.
-func (s *ReverseGeocodingService) CreateLandmarksParameters(latlong [2]float32, diameter int, gen int, appID string, appCode string) LandmarksParameters {
-	landmarksParameters := LandmarksParameters{Prox: createProx(latlong, diameter), Mode: Enum.ValueOfReverseGeocodingMode(ReverseGeocodingMode.RetrieveLandmarks), Gen: gen, AppID: appID, AppCode: appCode}
+func (s *ReverseGeocodingService) CreateLandmarksParameters(latlong [2]float32, diameter int, gen int, apiKey string) LandmarksParameters {
+	landmarksParameters := LandmarksParameters{Prox: createProx(latlong, diameter), Mode: Enum.ValueOfReverseGeocodingMode(ReverseGeocodingMode.RetrieveLandmarks), Gen: gen, APIKey: apiKey}
 	return landmarksParameters
 }
 
