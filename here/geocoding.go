@@ -15,8 +15,7 @@ type GeocodingService struct {
 // SearchTextParameters parameters by search text for Geocoding Service.
 type SearchTextParameters struct {
 	SearchText string `url:"searchtext"`
-	AppID      string `url:"app_id"`
-	AppCode    string `url:"app_code"`
+	APIKey     string `url:"apiKey"`
 	Gen        int    `url:"gen"`
 }
 
@@ -25,8 +24,7 @@ type AddressInBoundingBoxParameters struct {
 	SearchText string `url:"searchtext"`
 	MapView    string `url:"mapview"`
 	Gen        int    `url:"gen"`
-	AppID      string `url:"app_id"`
-	AppCode    string `url:"app_code"`
+	APIKey     string `url:"apiKey"`
 }
 
 // PartialAddressInformationParameters parameters by partial address information.
@@ -36,8 +34,7 @@ type PartialAddressInformationParameters struct {
 	City        string `url:"city"`
 	Country     string `url:"country"`
 	Gen         int    `url:"gen"`
-	AppID       string `url:"app_id"`
-	AppCode     string `url:"app_code"`
+	APIKey      string `url:"apiKey"`
 }
 
 // GeocodingResponse response model for geocoding service.
