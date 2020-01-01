@@ -15,6 +15,7 @@ type Client struct {
 	ReverseGeocoding      *ReverseGeocodingService
 	AutocompleteGeocoding *AutocompleteGeocodingService
 	Weather               *WeatherService
+	Places                *PlacesService
 }
 
 // NewRoutingClient returns a new RoutingClient.
@@ -59,5 +60,14 @@ func NewWeatherClient(httpClient *http.Client) *Client {
 	return &Client{
 		sling:   base,
 		Weather: newWeatherService(base.New()),
+	}
+}
+
+// NewPlacesClient returns a new PlacesService.
+func NewPlacesClient(httpClient *http.Client) *Client {
+	base := sling.New().Client(httpClient).Base("https://places.ls.hereapi.com/places/v1/")
+	return &Client{
+		sling:  base,
+		Places: newPlacesService(base.New()),
 	}
 }

@@ -1,0 +1,906 @@
+{
+  "items": [
+    {
+      "id": "eat-drink",
+      "title": "Eat & Drink",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/03.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/eat-drink",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "restaurant",
+      "title": "Restaurant",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/03.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/restaurant",
+      "system": "places",
+      "within": [
+        "eat-drink"
+      ]
+    },
+    {
+      "id": "snacks-fast-food",
+      "title": "Snacks/Fast food",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/03.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/snacks-fast-food",
+      "system": "places",
+      "within": [
+        "eat-drink"
+      ]
+    },
+    {
+      "id": "bar-pub",
+      "title": "Bar/Pub",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/22.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/bar-pub",
+      "system": "places",
+      "within": [
+        "eat-drink"
+      ]
+    },
+    {
+      "id": "coffee-tea",
+      "title": "Coffee/Tea",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/23.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/coffee-tea",
+      "system": "places",
+      "within": [
+        "eat-drink"
+      ]
+    },
+    {
+      "id": "coffee",
+      "title": "Coffee",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/23.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/coffee",
+      "system": "places",
+      "within": [
+        "coffee-tea"
+      ]
+    },
+    {
+      "id": "tea",
+      "title": "Tea",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/23.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/tea",
+      "system": "places",
+      "within": [
+        "coffee-tea"
+      ]
+    },
+    {
+      "id": "going-out",
+      "title": "Going Out",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/05.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/going-out",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "dance-night-club",
+      "title": "Dance or Nightclub",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/33.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/dance-night-club",
+      "system": "places",
+      "within": [
+        "going-out"
+      ]
+    },
+    {
+      "id": "cinema",
+      "title": "Cinema",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/32.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/cinema",
+      "system": "places",
+      "within": [
+        "going-out"
+      ]
+    },
+    {
+      "id": "theatre-music-culture",
+      "title": "Theatre, Music & Culture",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/05.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/theatre-music-culture",
+      "system": "places",
+      "within": [
+        "going-out"
+      ]
+    },
+    {
+      "id": "casino",
+      "title": "Casino",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/31.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/casino",
+      "system": "places",
+      "within": [
+        "going-out"
+      ]
+    },
+    {
+      "id": "sights-museums",
+      "title": "Sights & Museums",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/10.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/sights-museums",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "landmark-attraction",
+      "title": "Landmark/Attraction",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/38.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/landmark-attraction",
+      "system": "places",
+      "within": [
+        "sights-museums"
+      ]
+    },
+    {
+      "id": "museum",
+      "title": "Museum",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/10.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/museum",
+      "system": "places",
+      "within": [
+        "sights-museums"
+      ]
+    },
+    {
+      "id": "transport",
+      "title": "Transport",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/11.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/transport",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "airport",
+      "title": "Airport",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/40.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/airport",
+      "system": "places",
+      "within": [
+        "transport"
+      ]
+    },
+    {
+      "id": "railway-station",
+      "title": "Railway Station",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/43.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/railway-station",
+      "system": "places",
+      "within": [
+        "transport"
+      ]
+    },
+    {
+      "id": "public-transport",
+      "title": "Public Transport",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/11.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/public-transport",
+      "system": "places",
+      "within": [
+        "transport"
+      ]
+    },
+    {
+      "id": "ferry-terminal",
+      "title": "Ferry Terminal",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/41.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/ferry-terminal",
+      "system": "places",
+      "within": [
+        "transport"
+      ]
+    },
+    {
+      "id": "taxi-stand",
+      "title": "Taxi Stand",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/42.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/taxi-stand",
+      "system": "places",
+      "within": [
+        "transport"
+      ]
+    },
+    {
+      "id": "accommodation",
+      "title": "Accommodation",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/01.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/accommodation",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "hotel",
+      "title": "Hotel",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/01.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/hotel",
+      "system": "places",
+      "within": [
+        "accommodation"
+      ]
+    },
+    {
+      "id": "motel",
+      "title": "Motel",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/01.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/motel",
+      "system": "places",
+      "within": [
+        "accommodation"
+      ]
+    },
+    {
+      "id": "hostel",
+      "title": "Hostel",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/01.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/hostel",
+      "system": "places",
+      "within": [
+        "accommodation"
+      ]
+    },
+    {
+      "id": "camping",
+      "title": "Camping",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/14.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/camping",
+      "system": "places",
+      "within": [
+        "accommodation"
+      ]
+    },
+    {
+      "id": "shopping",
+      "title": "Shopping",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/shopping",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "kiosk-convenience-store",
+      "title": "Kiosk/24-7/Convenience Store",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/kiosk-convenience-store",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "wine-and-liquor",
+      "title": "Wine & Spirits",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/wine-and-liquor",
+      "system": "places",
+      "within": [
+        "kiosk-convenience-store"
+      ]
+    },
+    {
+      "id": "mall",
+      "title": "Shopping Centre",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/mall",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "department-store",
+      "title": "Department Store",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/department-store",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "food-drink",
+      "title": "Food & Drink",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/food-drink",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "bookshop",
+      "title": "Book Shop",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/bookshop",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "pharmacy",
+      "title": "Chemist's",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/37.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/pharmacy",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "electronics-shop",
+      "title": "Electronics",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/electronics-shop",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "hardware-house-garden-shop",
+      "title": "DIY/garden centre",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/hardware-house-garden-shop",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "clothing-accessories-shop",
+      "title": "Clothing & Accessories",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/clothing-accessories-shop",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "sport-outdoor-shop",
+      "title": "Outdoor Sports",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/sport-outdoor-shop",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "shop",
+      "title": "Shop",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/09.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/shop",
+      "system": "places",
+      "within": [
+        "shopping"
+      ]
+    },
+    {
+      "id": "business-services",
+      "title": "Business & Services",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/02.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/business-services",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "atm-bank-exchange",
+      "title": "ATM/Bank/Exchange",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/15.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/atm-bank-exchange",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "police-emergency",
+      "title": "Police/Emergency",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/19.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/police-emergency",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "ambulance-services",
+      "title": "Ambulance Services",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/19.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/ambulance-services",
+      "system": "places",
+      "within": [
+        "police-emergency"
+      ]
+    },
+    {
+      "id": "fire-department",
+      "title": "Fire Brigade",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/19.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/fire-department",
+      "system": "places",
+      "within": [
+        "police-emergency"
+      ]
+    },
+    {
+      "id": "police-station",
+      "title": "Police Station",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/19.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/police-station",
+      "system": "places",
+      "within": [
+        "police-emergency"
+      ]
+    },
+    {
+      "id": "post-office",
+      "title": "Post Office",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/20.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/post-office",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "tourist-information",
+      "title": "Tourist Information",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/21.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/tourist-information",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "petrol-station",
+      "title": "Petrol Station",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/18.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/petrol-station",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "ev-charging-station",
+      "title": "EV Charging Station",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/81.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/ev-charging-station",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "car-rental",
+      "title": "Car Hire",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/17.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/car-rental",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "car-dealer-repair",
+      "title": "Car Dealer/Repair",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/16.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/car-dealer-repair",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "travel-agency",
+      "title": "Travel Agency",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/02.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/travel-agency",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "communication-media",
+      "title": "Communications/Media",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/02.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/communication-media",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "business-industry",
+      "title": "Business/Industry",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/02.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/business-industry",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "service",
+      "title": "Service",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/02.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/service",
+      "system": "places",
+      "within": [
+        "business-services"
+      ]
+    },
+    {
+      "id": "facilities",
+      "title": "Facilities",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/04.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/facilities",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "hospital-health-care-facility",
+      "title": "Hospital or Healthcare Facility",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/26.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/hospital-health-care-facility",
+      "system": "places",
+      "within": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "hospital",
+      "title": "Hospital",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/26.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/hospital",
+      "system": "places",
+      "within": [
+        "hospital-health-care-facility"
+      ]
+    },
+    {
+      "id": "government-community-facility",
+      "title": "Government or Community Facility",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/04.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/government-community-facility",
+      "system": "places",
+      "within": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "education-facility",
+      "title": "Educational Facility",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/25.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/education-facility",
+      "system": "places",
+      "within": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "library",
+      "title": "Library",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/27.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/library",
+      "system": "places",
+      "within": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "fair-convention-facility",
+      "title": "Fair & Convention Facility",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/24.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/fair-convention-facility",
+      "system": "places",
+      "within": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "parking-facility",
+      "title": "Parking Facility",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/28.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/parking-facility",
+      "system": "places",
+      "within": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "toilet-rest-area",
+      "title": "Public Toilet/Rest Area",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/29.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/toilet-rest-area",
+      "system": "places",
+      "within": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "sports-facility-venue",
+      "title": "Sport Facility/Venue",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/30.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/sports-facility-venue",
+      "system": "places",
+      "within": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "facility",
+      "title": "Facility",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/04.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/facility",
+      "system": "places",
+      "within": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "religious-place",
+      "title": "Religious Place",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/39.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/religious-place",
+      "system": "places",
+      "within": [
+        "facilities"
+      ]
+    },
+    {
+      "id": "leisure-outdoor",
+      "title": "Leisure & Outdoor",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/07.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/leisure-outdoor",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "recreation",
+      "title": "Recreation",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/07.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/recreation",
+      "system": "places",
+      "within": [
+        "leisure-outdoor"
+      ]
+    },
+    {
+      "id": "amusement-holiday-park",
+      "title": "Theme Park",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/34.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/amusement-holiday-park",
+      "system": "places",
+      "within": [
+        "leisure-outdoor"
+      ]
+    },
+    {
+      "id": "zoo",
+      "title": "Zoo",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/34.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/zoo",
+      "system": "places",
+      "within": [
+        "amusement-holiday-park"
+      ]
+    },
+    {
+      "id": "administrative-areas-buildings",
+      "title": "Administrative Areas/Buildings",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/06.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/administrative-areas-buildings",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "administrative-region",
+      "title": "Administrative Region",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/06.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/administrative-region",
+      "system": "places",
+      "within": [
+        "administrative-areas-buildings"
+      ]
+    },
+    {
+      "id": "city-town-village",
+      "title": "City, Town or Village",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/35.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/city-town-village",
+      "system": "places",
+      "within": [
+        "administrative-areas-buildings"
+      ]
+    },
+    {
+      "id": "outdoor-area-complex",
+      "title": "Outdoor Area/Complex",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/06.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/outdoor-area-complex",
+      "system": "places",
+      "within": [
+        "administrative-areas-buildings"
+      ]
+    },
+    {
+      "id": "building",
+      "title": "Building",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/06.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/building",
+      "system": "places",
+      "within": [
+        "administrative-areas-buildings"
+      ]
+    },
+    {
+      "id": "street-square",
+      "title": "Street or Square",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/06.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/street-square",
+      "system": "places",
+      "within": [
+        "administrative-areas-buildings"
+      ]
+    },
+    {
+      "id": "intersection",
+      "title": "Junction",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/06.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/intersection",
+      "system": "places",
+      "within": [
+        "administrative-areas-buildings"
+      ]
+    },
+    {
+      "id": "postal-area",
+      "title": "Postal Area",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/06.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/postal-area",
+      "system": "places",
+      "within": [
+        "administrative-areas-buildings"
+      ]
+    },
+    {
+      "id": "natural-geographical",
+      "title": "Natural or Geographical",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/08.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/natural-geographical",
+      "system": "places",
+      "within": []
+    },
+    {
+      "id": "body-of-water",
+      "title": "Body of Water",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/36.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/body-of-water",
+      "system": "places",
+      "within": [
+        "natural-geographical"
+      ]
+    },
+    {
+      "id": "mountain-hill",
+      "title": "Mountain or Hill",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/08.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/mountain-hill",
+      "system": "places",
+      "within": [
+        "natural-geographical"
+      ]
+    },
+    {
+      "id": "undersea-feature",
+      "title": "Undersea Feature",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/08.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/undersea-feature",
+      "system": "places",
+      "within": [
+        "natural-geographical"
+      ]
+    },
+    {
+      "id": "forest-heath-vegetation",
+      "title": "Forest, Heath or Other Vegetation",
+      "icon": "https://download.vcdn.data.here.com/p/d/places2/icons/categories/08.icon",
+      "type": "urn:nlp-types:category",
+      "href": "https://places.ls.hereapi.com/places/v1/categories/places/forest-heath-vegetation",
+      "system": "places",
+      "within": [
+        "natural-geographical"
+      ]
+    }
+  ]
+}
