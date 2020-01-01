@@ -15,10 +15,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v1
     - name: Lint
-      run: go get golang.org/x/lint/golint
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/bin
+        go get golang.org/x/lint/golint
     - name: Install
-      run: go get github.com/abdullahselek/go-here/here
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/src
+        go get github.com/abdullahselek/go-here/here
     - name: Test
-      run: go test ./here -race -coverprofile=coverage.txt -covermode=atomic
-    - name: Codecov
-      run: bash <(curl -s https://codecov.io/bash) -X fix
+      run: |
+        go get github.com/stretchr/testify/assert
+        go test ./here -race -coverprofile=coverage.txt -covermode=atomic
