@@ -1,12 +1,12 @@
 on: [push, pull_request]
 name: Go HERE CI
 jobs:
-  test:
+  build:
+    runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
         go-version: [1.10.x, 1.11.x, 1.12.x, 1.13.x]
         platform: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{ matrix.platform }}
     steps:
     - name: Install Go
       uses: actions/setup-go@v1
@@ -14,14 +14,35 @@ jobs:
         go-version: ${{ matrix.go-version }}
     - name: Checkout code
       uses: actions/checkout@v1
-    - name: Lint
+    - name: Lint Linux
+      if: matrix.operating-system == 'ubuntu-latest'
       run: |
         export PATH=$PATH:$(go env GOPATH)/bin
         go get golang.org/x/lint/golint
-    - name: Install
+    - name: Lint macOS
+      if: matrix.operating-system == 'macos-latest'
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/bin
+        go get golang.org/x/lint/golint
+    - name: Lint Windows
+      if: matrix.operating-system == 'windows-latest'
+      run: |
+        set
+        # go get golang.org/x/lint/golint
+    - name: Install Linux
+      if: matrix.operating-system == 'ubuntu-latest'
       run: |
         export PATH=$PATH:$(go env GOPATH)/src
         go get github.com/abdullahselek/go-here/here
+    - name: Install macOS
+      if: matrix.operating-system == 'macos-latest'
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/src
+        go get github.com/abdullahselek/go-here/here
+    - name: Install Windows
+      if: matrix.operating-system == 'windows-latest'
+      run: |
+        # go get github.com/abdullahselek/go-here/here
     - name: Test
       run: |
         go get github.com/stretchr/testify/assert
