@@ -1,0 +1,61 @@
+{
+    "observations": {
+      "location": [
+        {
+          "observation": [
+            {
+              "daylight": "N",
+              "description": "Light rain. Passing clouds. Quite cool.",
+              "skyInfo": "7",
+              "skyDescription": "Passing clouds",
+              "temperature": "6.00",
+              "temperatureDesc": "Quite cool",
+              "comfort": "4.01",
+              "highTemperature": "8.40",
+              "lowTemperature": "6.80",
+              "humidity": "93",
+              "dewPoint": "5.00",
+              "precipitation1H": "*",
+              "precipitation3H": "*",
+              "precipitation6H": "*",
+              "precipitation12H": "*",
+              "precipitation24H": "*",
+              "precipitationDesc": "Light rain",
+              "airInfo": "*",
+              "airDescription": "",
+              "windSpeed": "9.27",
+              "windDirection": "260",
+              "windDesc": "West",
+              "windDescShort": "W",
+              "barometerPressure": "1004.07",
+              "barometerTrend": "",
+              "visibility": "*",
+              "snowCover": "*",
+              "icon": "34",
+              "iconName": "night_sprinkles",
+              "iconLink": "https://weather.ls.hereapi.com/static/weather/icon/22.png",
+              "ageMinutes": "32",
+              "activeAlerts": "0",
+              "country": "Germany",
+              "state": "Berlin",
+              "city": "Unter den Linden",
+              "latitude": 52.5178,
+              "longitude": 13.3874,
+              "distance": 7.65,
+              "elevation": 0,
+              "utcTime": "2020-02-02T20:50:00.000+01:00"
+            }
+          ],
+          "country": "Germany",
+          "state": "Berlin",
+          "city": "Unter den Linden",
+          "latitude": 52.51784,
+          "longitude": 13.38736,
+          "distance": 0.23,
+          "timezone": 1
+        }
+      ]
+    },
+    "feedCreation": "2020-02-02T20:22:50.008Z",
+    "metric": true
+  }

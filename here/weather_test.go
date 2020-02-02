@@ -32,3 +32,22 @@ func TestWeatherService_SevereWeatherAlerts(t *testing.T) {
 	assert.NotNil(t, severeWeatherAlerts)
 	assert.Nil(t, err)
 }
+
+func TestWeatherService_WeatherConditions(t *testing.T) {
+	h := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Write(readJSONFile("resources/weather_conditions_by_location.json"))
+	})
+	httpClient, teardown := testingHTTPClient(h)
+	defer teardown()
+
+	client := NewWeatherClient(httpClient)
+	weatherConditionsParams := WeatherConditionsParams{
+		Latitude:       52.516,
+		Longitude:      13.389,
+		OneObservation: true,
+		APIKey:         "apiKey",
+	}
+	weatherConditions, _, err := client.Weather.WeatherConditions(&weatherConditionsParams)
+	assert.NotNil(t, weatherConditions)
+	assert.Nil(t, err)
+}
