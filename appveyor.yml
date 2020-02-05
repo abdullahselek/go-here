@@ -10,6 +10,7 @@ stack:
   - go 1.10
   - go 1.11
   - go 1.12
+  - go 1.13
 
 before_test:
   - go get -v -t ./here
