@@ -20,6 +20,10 @@ Will add rest of the apis in time and all contributions are welcome.
 ## Install
 
     go get github.com/abdullahselek/go-here/here
+    
+To install **go-here** and it's dependencies with a single line
+
+    go get -t github.com/abdullahselek/go-here/here
 
 ## Documentation
 
