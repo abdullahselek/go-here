@@ -13,7 +13,10 @@ stack:
   - go 1.13
 
 before_test:
+  - go get -u golang.org/x/lint/golint
   - go get -v -t ./here
 
 test_script:
+  - LINT_PATH="$(go list -f {{.Target}} golang.org/x/lint/golint)"
+  - $LINT_PATH ./here
   - go test -v ./here
