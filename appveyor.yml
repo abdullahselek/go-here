@@ -11,6 +11,7 @@ stack:
   - go 1.11
   - go 1.12
   - go 1.13
+  - go 1.14
 
 before_test:
   - go get -u golang.org/x/lint/golint
