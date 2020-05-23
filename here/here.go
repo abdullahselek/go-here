@@ -11,6 +11,7 @@ type Client struct {
 	sling *sling.Sling
 	// HERE API Services
 	Routing               *RoutingService
+	FleetTelematics       *FleetTelematicsService
 	Geocoding             *GeocodingService
 	ReverseGeocoding      *ReverseGeocodingService
 	AutocompleteGeocoding *AutocompleteGeocodingService
@@ -24,6 +25,15 @@ func NewRoutingClient(httpClient *http.Client) *Client {
 	return &Client{
 		sling:   base,
 		Routing: newRoutingService(base.New()),
+	}
+}
+
+// NewFleetTelematicsClient returns a new NewFleetTelematicsClient.
+func NewFleetTelematicsClient(httpClient *http.Client) *Client {
+	base := sling.New().Client(httpClient).Base("https://wse.ls.hereapi.com/2/")
+	return &Client{
+		sling:           base,
+		FleetTelematics: newFleetTelematicsService(base.New()),
 	}
 }
 
