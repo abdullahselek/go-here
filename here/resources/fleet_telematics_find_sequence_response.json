@@ -1,0 +1,135 @@
+{
+    "results": [
+        {
+            "waypoints": [
+                {
+                    "id": "start",
+                    "lat": -25.643787,
+                    "lng": -49.158607,
+                    "sequence": 0,
+                    "estimatedArrival": null,
+                    "estimatedDeparture": "2020-05-21T19:58:16Z",
+                    "fulfilledConstraints": []
+                },
+                {
+                    "id": "destination5",
+                    "lat": -23.723181,
+                    "lng": -46.605808,
+                    "sequence": 1,
+                    "estimatedArrival": null,
+                    "estimatedDeparture": "2020-05-22T03:43:21Z",
+                    "fulfilledConstraints": []
+                },
+                {
+                    "id": "destination4",
+                    "lat": -23.723181,
+                    "lng": -46.605808,
+                    "sequence": 2,
+                    "estimatedArrival": null,
+                    "estimatedDeparture": "2020-05-22T03:43:21Z",
+                    "fulfilledConstraints": []
+                },
+                {
+                    "id": "destination3",
+                    "lat": -20.778555,
+                    "lng": -51.591164,
+                    "sequence": 3,
+                    "estimatedArrival": null,
+                    "estimatedDeparture": "2020-05-22T14:19:15Z",
+                    "fulfilledConstraints": []
+                },
+                {
+                    "id": "destination2",
+                    "lat": -22.983191,
+                    "lng": -49.903282,
+                    "sequence": 4,
+                    "estimatedArrival": null,
+                    "estimatedDeparture": "2020-05-22T20:41:16Z",
+                    "fulfilledConstraints": []
+                },
+                {
+                    "id": "destination1",
+                    "lat": -25.644764,
+                    "lng": -49.158558,
+                    "sequence": 5,
+                    "estimatedArrival": null,
+                    "estimatedDeparture": "2020-05-23T06:15:58Z",
+                    "fulfilledConstraints": []
+                },
+                {
+                    "id": "end",
+                    "lat": -25.643787,
+                    "lng": -49.158607,
+                    "sequence": 6,
+                    "estimatedArrival": "2020-05-23T06:16:28Z",
+                    "estimatedDeparture": null,
+                    "fulfilledConstraints": []
+                }
+            ],
+            "distance": "1997075",
+            "time": "123492",
+            "interconnections": [
+                {
+                    "fromWaypoint": "start",
+                    "toWaypoint": "destination5",
+                    "distance": 439328.0,
+                    "time": 27905.0,
+                    "rest": 0.0,
+                    "waiting": 0.0
+                },
+                {
+                    "fromWaypoint": "destination5",
+                    "toWaypoint": "destination4",
+                    "distance": 0.0,
+                    "time": 0.0,
+                    "rest": 0.0,
+                    "waiting": 0.0
+                },
+                {
+                    "fromWaypoint": "destination4",
+                    "toWaypoint": "destination3",
+                    "distance": 722082.0,
+                    "time": 38154.0,
+                    "rest": 0.0,
+                    "waiting": 0.0
+                },
+                {
+                    "fromWaypoint": "destination3",
+                    "toWaypoint": "destination2",
+                    "distance": 388025.0,
+                    "time": 22921.0,
+                    "rest": 0.0,
+                    "waiting": 0.0
+                },
+                {
+                    "fromWaypoint": "destination2",
+                    "toWaypoint": "destination1",
+                    "distance": 447533.0,
+                    "time": 34482.0,
+                    "rest": 0.0,
+                    "waiting": 0.0
+                },
+                {
+                    "fromWaypoint": "destination1",
+                    "toWaypoint": "end",
+                    "distance": 107.0,
+                    "time": 30.0,
+                    "rest": 0.0,
+                    "waiting": 0.0
+                }
+            ],
+            "description": "Targeted best time; without traffic",
+            "timeBreakdown": {
+                "driving": 123492,
+                "service": 0,
+                "rest": 0,
+                "waiting": 0
+            }
+        }
+    ],
+    "errors": [],
+    "processingTimeDesc": "921ms",
+    "responseCode": "200",
+    "warnings": null,
+    "requestId": null
+}

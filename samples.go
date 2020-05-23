@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
+	"go-here/here"
 	"net/http"
 	"time"
-
-	"github.com/abdullahselek/go-here/here"
 )
 
 func main() {
@@ -40,6 +39,16 @@ func main() {
 	suggestionsParameters := autocompleteGeocodingClient.AutocompleteGeocoding.CreateDetailsForSuggestionParameters("Pariser 1 Berl", "apiKey")
 	autocompleteGeocodingResponse, httpResponse, err := autocompleteGeocodingClient.AutocompleteGeocoding.DetailsForSuggestion(&suggestionsParameters)
 	fmt.Println(autocompleteGeocodingResponse)
+	fmt.Println(httpResponse)
+	fmt.Println(err)
+
+	fleetTelematicsClient := here.NewFleetTelematicsClient(httpClient)
+	start := here.DestinationParams{Coordinates: [2]float32{-25.643787, -49.158607}, Text: "Start"}
+	end := here.DestinationParams{Coordinates: [2]float32{-20.778591, -51.591198}, Text: "End"}
+	destinations := []here.DestinationParams{{Coordinates: [2]float32{-25.644764, -49.158558}, Text: "Destination1"}, {Coordinates: [2]float32{-22.98319, -49.903282}, Text: "Destination2"}, {Coordinates: [2]float32{-20.778555, -51.591164}, Text: "Destination3"}}
+	fleetTelematicsParams := fleetTelematicsClient.FleetTelematics.CreateFleetTelematicsParams(start, end, destinations, "apiKey", []here.Enum{here.RouteMode.Fastest, here.RouteMode.Truck})
+	routeSequence, httpResponse, err := fleetTelematicsClient.FleetTelematics.FindSequence(&fleetTelematicsParams)
+	fmt.Println(routeSequence)
 	fmt.Println(httpResponse)
 	fmt.Println(err)
 }
