@@ -123,7 +123,5 @@ func (s *FleetTelematicsService) FindSequence(params *FleetTelematicsParams) (*F
 	routeSequence := new(FleetTelematicsWaypointsSequenceResponse)
 	apiError := new(APIError)
 	resp, err := s.sling.New().Get("findsequence.json").QueryStruct(params).Receive(routeSequence, apiError)
-	fmt.Printf("\n%v\n", routeSequence)
-	fmt.Printf("\n%v\n", resp)
 	return routeSequence, resp, relevantError(err, *apiError)
 }
